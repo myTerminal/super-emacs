@@ -9,7 +9,9 @@
     ace-jump-mode
     powerline
     switch-window
+    buffer-move
     auto-complete
+    ztree
     undo-tree
     material-theme
     meta-presenter

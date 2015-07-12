@@ -15,6 +15,10 @@
     ("C-x C-r" . helm-recentf)
     ("M-y" . helm-show-kill-ring)
     ("C-M-z" . switch-window)
+    ("C-S-<up>" . buf-move-up)
+    ("C-S-<down>" . buf-move-down)
+    ("C-S-<left>" . buf-move-left)
+    ("C-S-<right>" . buf-move-right)
     ("<f5>" . super-emacs-reload-current-file)))
 
 (defun super-emacs-apply-keyboard-bindings (pair)
