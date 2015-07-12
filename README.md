@@ -30,11 +30,13 @@ or download the repository as an archive and place it at your `home` directory. 
 3. [ace-jump-mode](https://github.com/winterTTr/ace-jump-mode) to be able to jump around quickly
 4. [powerline](https://github.com/milkypostman/powerline) to decorate your mode-line and make it more informative
 5. [switch-window](https://github.com/dimitri/switch-window) to be able to switch windows visually
-6. [auto-complete](https://github.com/auto-complete/auto-complete) for easy text editing
-7. [undo-tree](https://github.com/emacsmirror/undo-tree) to be able to visualize your changes in a buffer
-8. [meta-presenter](https://github.com/myTerminal/meta-presenter) for presenting slide-shows from within Emacs
-9. [myterminal-controls](https://github.com/myTerminal/myterminal-controls) for quick-toggle controls at a key-stroke
-10. [theme-looper](https://github.com/myTerminal/theme-looper) for switching themes in style
+6. [buffer-move](http://www.emacswiki.org/emacs/buffer-move.el) for moving buffers within windows quickly
+7. [auto-complete](https://github.com/auto-complete/auto-complete) for easy text editing
+8. [ztree](https://github.com/fourier/ztree) for an efficient directory tree comparison
+9. [undo-tree](https://github.com/emacsmirror/undo-tree) to be able to visualize your changes in a buffer
+10. [meta-presenter](https://github.com/myTerminal/meta-presenter) for presenting slide-shows from within Emacs
+11. [myterminal-controls](https://github.com/myTerminal/myterminal-controls) for quick-toggle controls at a key-stroke
+12. [theme-looper](https://github.com/myTerminal/theme-looper) for switching themes in style
 
 ### Key-bindings
 
