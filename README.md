@@ -6,6 +6,8 @@
 
 An out-of-the-box Emacs configuration with super powers
 
+[![http://img.youtube.com/vi/mRoGM_-8K9g/0.jpg](http://img.youtube.com/vi/mRoGM_-8K9g/0.jpg)](http://www.youtube.com/watch?v=mRoGM_-8K9g)
+
 ## Setup
 
 Clone the repository with
