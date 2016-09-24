@@ -13,7 +13,10 @@
     auto-complete
     ztree
     undo-tree
+    neotree
     material-theme
+    dired-launch
+    which-key
     meta-presenter
     myterminal-controls
     theme-looper))
@@ -29,6 +32,13 @@
 ;Start undo-tree
 (global-undo-tree-mode)
 
+;Set hooks for dired-launch-mode
+(add-hook 'dired-mode-hook
+          'dired-launch-mode)
+
+;Start which-key-mode
+(which-key-mode)
+
 ;Set up ace-jump-mode
 (autoload 'ace-jump-mode 
   "ace-jump-mode" 
@@ -42,7 +52,7 @@
 ;Enable powerline
 (powerline-center-theme)
 (setq powerline-default-separator
-      'wave)
+      'slant)
 
 ;Configure theme-looper
 (theme-looper-set-theme-set '(deeper-blue
