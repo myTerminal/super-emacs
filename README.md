@@ -12,6 +12,8 @@
 
 An out-of-the-box Emacs configuration with super powers, now also on Docker!
 
+If you are looking for a light-weight configuration, try [ample-emacs](https://github.com/myTerminal/ample-emacs)
+
 ## Video
 
 [![http://img.youtube.com/vi/mRoGM_-8K9g/0.jpg](http://img.youtube.com/vi/mRoGM_-8K9g/0.jpg)](http://www.youtube.com/watch?v=mRoGM_-8K9g)
