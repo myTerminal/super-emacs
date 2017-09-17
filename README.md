@@ -12,8 +12,6 @@
 
 An out-of-the-box Emacs configuration with super powers, now also on Docker!
 
-If you are looking for a light-weight configuration, try [ample-emacs](https://github.com/myTerminal/ample-emacs)
-
 ## Video
 
 [![http://img.youtube.com/vi/mRoGM_-8K9g/0.jpg](http://img.youtube.com/vi/mRoGM_-8K9g/0.jpg)](http://www.youtube.com/watch?v=mRoGM_-8K9g)
@@ -48,8 +46,8 @@ Pull super-emacs docker image and start `emacs`
 1. [helm](https://github.com/emacs-helm/helm) to take your Emacs experience to the next level
 2. [multiple-cursors](https://github.com/magnars/multiple-cursors.el) to be able to edit text in style
 3. [ace-jump-mode](https://github.com/winterTTr/ace-jump-mode) to be able to jump around quickly
-4. [powerline](https://github.com/milkypostman/powerline) to decorate your mode-line and make it more informative
-5. [switch-window](https://github.com/dimitri/switch-window) to be able to switch windows visually
+4. [ace-window](https://github.com/abo-abo/ace-window) to be able to switch windows visually
+5. [powerline](https://github.com/milkypostman/powerline) to decorate your mode-line and make it more informative
 6. [buffer-move](http://www.emacswiki.org/emacs/buffer-move.el) for moving buffers within windows quickly
 7. [auto-complete](https://github.com/auto-complete/auto-complete) for easy text editing
 8. [ztree](https://github.com/fourier/ztree) for an efficient directory tree comparison
@@ -64,3 +62,9 @@ Pull super-emacs docker image and start `emacs`
 ### Key-bindings
 
 Refer [key-bindings.el](.emacs.d/super-emacs/key-bindings.el) for all the pre-configured key-bindings for your convenience.
+
+## References
+
+If you are looking for a light-weight configuration, try [ample-emacs](https://github.com/myTerminal/ample-emacs).
+
+For an even more comprehensive configuration, refer to my [dotfiles](https://github.com/myTerminal/dotfiles).

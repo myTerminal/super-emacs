@@ -7,8 +7,8 @@
   '(helm
     multiple-cursors
     ace-jump-mode
+    ace-window
     powerline
-    switch-window
     buffer-move
     auto-complete
     ztree

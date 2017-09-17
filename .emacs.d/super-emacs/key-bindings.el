@@ -15,7 +15,7 @@
     ("C-x C-f" . helm-find-files)
     ("C-x C-r" . helm-recentf)
     ("M-y" . helm-show-kill-ring)
-    ("C-M-z" . switch-window)
+    ("C-;" . ace-window)
     ("C-S-<up>" . buf-move-up)
     ("C-S-<down>" . buf-move-down)
     ("C-S-<left>" . buf-move-left)
