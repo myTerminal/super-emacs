@@ -1,8 +1,8 @@
-;Create repositories cache, if required
+;;Create repositories cache, if required
 (when (not package-archive-contents)
   (package-refresh-contents))
 
-;Declare a list of required packages
+;;Declare a list of required packages
 (defvar super-emacs--required-packages
   '(helm
     multiple-cursors
@@ -22,29 +22,29 @@
     myterminal-controls
     theme-looper))
 
-;Install required packages
+;;Install required packages
 (mapc (lambda (p)
         (package-install p))
       super-emacs--required-packages)
 
-;Configure and enable sublimity-mode
+;;Configure and enable sublimity-mode
 (require 'sublimity-scroll)
 (sublimity-mode)
 
-;Load default auto-complete configs
+;;Load default auto-complete configs
 (ac-config-default)
 
-;Start undo-tree
+;;Start undo-tree
 (global-undo-tree-mode)
 
-;Set hooks for dired-launch-mode
+;;Set hooks for dired-launch-mode
 (add-hook 'dired-mode-hook
           'dired-launch-mode)
 
-;Start which-key-mode
+;;Start which-key-mode
 (which-key-mode)
 
-;Set up ace-jump-mode
+;;Set up ace-jump-mode
 (autoload 'ace-jump-mode 
   "ace-jump-mode" 
   "Emacs quick move minor mode"
@@ -54,24 +54,24 @@
   "Ace jump back:-"
   t)
 
-;Enable powerline
+;;Enable powerline
 (powerline-center-theme)
 (setq powerline-default-separator
       'slant)
 
-;Configure theme-looper
+;;Configure theme-looper
 (theme-looper-set-theme-set '(deeper-blue
                               wheatgrass
                               wombat
                               material))
 (theme-looper-set-customizations 'powerline-reset)
 
-;Configure myterminal-controls
+;;Configure myterminal-controls
 (myterminal-controls-set-controls-data
  '(("t" "Change color theme" theme-looper-enable-next-theme)
    ("r" "Reload file" super-emacs-reload-current-file)))
 
-;Set up helm-mode
+;;Set up helm-mode
 (helm-mode 1)
 (helm-autoresize-mode 1)
 (setq helm-split-window-in-side-p

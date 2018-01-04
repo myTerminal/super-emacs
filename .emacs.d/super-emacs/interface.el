@@ -1,20 +1,20 @@
-;Change title-bar text
+;;Change title-bar text
 (setq frame-title-format
       "super-emacs")
 
-;Disable menu-bar
+;;Disable menu-bar
 (menu-bar-mode -1)
 
-;Disable tool-bar
+;;Disable tool-bar
 (tool-bar-mode -1)
 
-;Disable scroll-bar
+;;Disable scroll-bar
 (scroll-bar-mode -1)
 
-;Activate material theme
+;;Activate material theme
 (load-theme 'material
             t)
 
-;Set font
+;;Set font
 (custom-set-faces
  '(default ((t (:height 120)))))
