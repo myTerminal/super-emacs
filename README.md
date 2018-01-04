@@ -32,32 +32,34 @@ Pull super-emacs docker image and start `emacs`
 
 ## Features
 
-1. Minimal interface with almost everything except the window turned off
-2. [Material theme](https://github.com/cpaulik/emacs-material-theme) applied by default, with a readable font-size
-3. [MELPA](http://melpa.org) added as a package archive
-4. Navigation through buffers simplified with [winner](http://emacswiki.org/emacs/WinnerMode) and [windmove](http://emacswiki.org/emacs/WindMove).
-5. See command suggestions when `C-x` is pressed, using `which-key`
-6. Super-easy file system navigation with `neotree`
-7. No more welcome screen, Emacs starts up to greet you and shows the date
-8. Reload file in a buffer quickly with `<f5>`
+- Minimal interface with almost everything except the window turned off
+- [Material theme](https://github.com/cpaulik/emacs-material-theme) applied by default, with a readable font-size
+- [MELPA](http://melpa.org) added as a package archive
+- Smooth scrolling with [sublimity](https://github.com/zk-phi/sublimity)
+- Navigation through buffers simplified with [winner](http://emacswiki.org/emacs/WinnerMode) and [windmove](http://emacswiki.org/emacs/WindMove).
+- See command suggestions when `C-x` is pressed, using [which-key](https://github.com/justbur/emacs-which-key)
+- Super-easy file system navigation with [neotree](https://github.com/jaypei/emacs-neotree)
+- No more welcome screen, Emacs starts up to greet you and shows the date
+- Reload file in a buffer quickly with `<f5>`
 
 ### Pre-configured packages
 
-1. [helm](https://github.com/emacs-helm/helm) to take your Emacs experience to the next level
-2. [multiple-cursors](https://github.com/magnars/multiple-cursors.el) to be able to edit text in style
-3. [ace-jump-mode](https://github.com/winterTTr/ace-jump-mode) to be able to jump around quickly
-4. [ace-window](https://github.com/abo-abo/ace-window) to be able to switch windows visually
-5. [powerline](https://github.com/milkypostman/powerline) to decorate your mode-line and make it more informative
-6. [buffer-move](http://www.emacswiki.org/emacs/buffer-move.el) for moving buffers within windows quickly
-7. [auto-complete](https://github.com/auto-complete/auto-complete) for easy text editing
-8. [ztree](https://github.com/fourier/ztree) for an efficient directory tree comparison
-9. [undo-tree](https://github.com/emacsmirror/undo-tree) to be able to visualize your changes in a buffer
-10. [neotree](https://github.com/jaypei/emacs-neotree) to be able to spawn a tree at any directory
-11. [dired-launch](https://github.com/thomp/dired-launch) to be able to open files with their default applications from within `dired`
-12. [which-key](https://github.com/justbur/emacs-which-key) to be suggested with what you can do after pressing `C-x`
-13. [meta-presenter](https://github.com/myTerminal/meta-presenter) for presenting slide-shows from within Emacs
-14. [myterminal-controls](https://github.com/myTerminal/myterminal-controls) for quick-toggle controls at a key-stroke
-15. [theme-looper](https://github.com/myTerminal/theme-looper) for switching themes in style
+- [helm](https://github.com/emacs-helm/helm) to take your Emacs experience to the next level
+- [sublimity](https://github.com/zk-phi/sublimity) to be able to scroll buffers smoothly
+- [multiple-cursors](https://github.com/magnars/multiple-cursors.el) to be able to edit text in style
+- [ace-jump-mode](https://github.com/winterTTr/ace-jump-mode) to be able to jump around quickly
+- [ace-window](https://github.com/abo-abo/ace-window) to be able to switch windows visually
+- [powerline](https://github.com/milkypostman/powerline) to decorate your mode-line and make it more informative
+- [buffer-move](http://www.emacswiki.org/emacs/buffer-move.el) for moving buffers within windows quickly
+- [auto-complete](https://github.com/auto-complete/auto-complete) for easy text editing
+- [ztree](https://github.com/fourier/ztree) for an efficient directory tree comparison
+- [undo-tree](https://github.com/emacsmirror/undo-tree) to be able to visualize your changes in a buffer
+- [neotree](https://github.com/jaypei/emacs-neotree) to be able to spawn a tree at any directory
+- [dired-launch](https://github.com/thomp/dired-launch) to be able to open files with their default applications from within `dired`
+- [which-key](https://github.com/justbur/emacs-which-key) to be suggested with what you can do after pressing `C-x`
+- [meta-presenter](https://github.com/myTerminal/meta-presenter) for presenting slide-shows from within Emacs
+- [myterminal-controls](https://github.com/myTerminal/myterminal-controls) for quick-toggle controls at a key-stroke
+- [theme-looper](https://github.com/myTerminal/theme-looper) for switching themes in style
 
 ### Key-bindings
 
