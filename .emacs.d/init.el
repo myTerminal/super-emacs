@@ -3,11 +3,11 @@
   (current-time))
 
 ;;Load configuration files
-(load-file "~/.emacs.d/super-emacs/repositories.el")
-(load-file "~/.emacs.d/super-emacs/packages.el")
-(load-file "~/.emacs.d/super-emacs/interface.el")
-(load-file "~/.emacs.d/super-emacs/misc.el")
-(load-file "~/.emacs.d/super-emacs/key-bindings.el")
+(load-file "~/.emacs.d/super-emacs/01-repositories.el")
+(load-file "~/.emacs.d/super-emacs/02-packages.el")
+(load-file "~/.emacs.d/super-emacs/03-interface.el")
+(load-file "~/.emacs.d/super-emacs/04-misc.el")
+(load-file "~/.emacs.d/super-emacs/05-key-bindings.el")
 
 ;;Print welcome message
 (princ (cl-concatenate 'string
