@@ -8,6 +8,7 @@
     multiple-cursors
     ace-jump-mode
     ace-window
+    sublimity
     powerline
     buffer-move
     auto-complete
@@ -25,6 +26,10 @@
 (mapc (lambda (p)
         (package-install p))
       super-emacs--required-packages)
+
+;Configure and enable sublimity-mode
+(require 'sublimity-scroll)
+(sublimity-mode)
 
 ;Load default auto-complete configs
 (ac-config-default)
