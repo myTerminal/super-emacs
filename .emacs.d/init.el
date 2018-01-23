@@ -3,6 +3,7 @@
   (current-time))
 
 ;;Load configuration files
+(load-file "~/.emacs.d/super-emacs/00-system.el")
 (load-file "~/.emacs.d/super-emacs/01-repositories.el")
 (load-file "~/.emacs.d/super-emacs/02-packages.el")
 (load-file "~/.emacs.d/super-emacs/03-interface.el")
