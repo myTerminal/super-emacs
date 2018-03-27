@@ -11,8 +11,8 @@
 ;;Disable scroll-bar
 (scroll-bar-mode -1)
 
-;;Activate material theme
-(load-theme 'material
+;;Activate overcast theme
+(load-theme 'overcast
             t)
 
 ;;Set font

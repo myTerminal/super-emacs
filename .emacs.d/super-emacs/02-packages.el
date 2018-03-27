@@ -15,9 +15,9 @@
     ztree
     undo-tree
     neotree
-    material-theme
     dired-launch
     which-key
+    overcast-theme
     meta-presenter
     myterminal-controls
     theme-looper))
@@ -63,7 +63,7 @@
 (theme-looper-set-theme-set '(deeper-blue
                               wheatgrass
                               wombat
-                              material))
+                              overcast))
 (theme-looper-set-customizations 'powerline-reset)
 
 ;;Configure myterminal-controls

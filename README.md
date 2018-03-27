@@ -32,7 +32,7 @@ Pull super-emacs docker image and start `emacs`
 ## Features
 
 - Minimal interface with almost everything except the window turned off
-- [Material theme](https://github.com/cpaulik/emacs-material-theme) applied by default, with a readable font-size
+- [overcast-theme](http://github.com/myTerminal/overcast-theme) applied by default, with a readable font-size
 - [MELPA](http://melpa.org) added as a package archive
 - Smooth scrolling with [sublimity](https://github.com/zk-phi/sublimity)
 - Navigation through buffers simplified with [winner](http://emacswiki.org/emacs/WinnerMode) and [windmove](http://emacswiki.org/emacs/WindMove).
