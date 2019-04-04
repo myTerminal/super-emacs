@@ -11,12 +11,13 @@
 (load-file "~/.emacs.d/super-emacs/05-key-bindings.el")
 
 ;;Print welcome message
-(princ (cl-concatenate 'string
-                       "Startup completed in "
-                       (number-to-string (cadr (time-subtract (current-time)
-                                                              super-emacs/invokation-time)))
-                       " seconds\n\n"
-                       "Welcome to super-emacs!\n\n"
-                       "Today's date: "
-                       (format-time-string "%B %d %Y"))
+(princ (concat "Welcome to super-emacs!"
+               "\n\n"
+               "Today is "
+               (format-time-string "%B %d %Y")
+               "\n\n"
+               "(Started in "
+               (number-to-string (cadr (time-subtract (current-time)
+                                                      super-emacs/invokation-time)))
+               " seconds)")
        (get-buffer-create (current-buffer)))
