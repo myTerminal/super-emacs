@@ -11,6 +11,10 @@
 (setq initial-scratch-message 
       "")
 
+;;Delete lines along with carriage returns
+(setq kill-whole-line
+      t)
+
 ;;Enforce spaces for indentation, instead of tabs
 (setq-default indent-tabs-mode 
               nil)
