@@ -68,9 +68,13 @@
 
 ;;Configure myterminal-controls
 (myterminal-controls-set-controls-data
- '(("." "Switch to next color-theme" theme-looper-enable-next-theme)
-   ("," "Switch to previous color-theme" theme-looper-enable-previous-theme)
-   ("r" "Reload file" super-emacs-reload-current-file)))
+ '(("." "Switch to next color-theme"
+    theme-looper-enable-next-theme)
+   ("," "Switch to previous color-theme"
+    theme-looper-enable-previous-theme)
+   ("r" "Reload file"
+    super-emacs-reload-current-file
+    t)))
 
 ;;Set up helm-mode
 (helm-mode 1)
