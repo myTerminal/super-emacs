@@ -40,6 +40,7 @@ Pull super-emacs docker image and start `emacs`
 - Super-easy file system navigation with [neotree](https://github.com/jaypei/emacs-neotree)
 - No more welcome screen, Emacs starts up to greet you and shows the date
 - Reload file in a buffer quickly with `<f5>`
+- Some more configuration to improve usability
 
 ### Pre-configured packages
 
