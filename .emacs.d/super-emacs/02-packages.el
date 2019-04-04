@@ -60,15 +60,16 @@
       'slant)
 
 ;;Configure theme-looper
-(theme-looper-set-theme-set '(deeper-blue
-                              wheatgrass
-                              wombat
-                              overcast))
-(theme-looper-set-customizations 'powerline-reset)
+(theme-looper-set-favorite-themes '(deeper-blue
+				    wheatgrass
+				    wombat
+				    overcast))
+(theme-looper-set-post-switch-script 'powerline-reset)
 
 ;;Configure myterminal-controls
 (myterminal-controls-set-controls-data
- '(("t" "Change color theme" theme-looper-enable-next-theme)
+ '(("." "Switch to next color-theme" theme-looper-enable-next-theme)
+   ("," "Switch to previous color-theme" theme-looper-enable-previous-theme)
    ("r" "Reload file" super-emacs-reload-current-file)))
 
 ;;Set up helm-mode
