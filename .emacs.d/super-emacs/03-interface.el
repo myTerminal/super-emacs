@@ -1,6 +1,6 @@
 ;;Change title-bar text
 (setq frame-title-format
-      "super-emacs")
+      "%b - super-emacs")
 
 ;;Disable menu-bar
 (menu-bar-mode -1)
