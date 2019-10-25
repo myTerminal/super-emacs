@@ -3,7 +3,7 @@
 
 ;;Add melpa to list of repositories
 (add-to-list 'package-archives
-	     '("melpa" . "http://melpa.milkbox.net/packages/") 
+	     '("melpa" . "http://melpa.milkbox.net/packages/")
              t)
 
 ;;Initialize package.el

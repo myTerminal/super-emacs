@@ -6,9 +6,9 @@
         (t (message "You're not editing a file!"))))
 
 ;;Disable splash message, start *scratch* buffer by default
-(setq initial-buffer-choice 
+(setq initial-buffer-choice
       t)
-(setq initial-scratch-message 
+(setq initial-scratch-message
       "")
 
 ;;Delete lines along with carriage returns
@@ -16,7 +16,7 @@
       t)
 
 ;;Enforce spaces for indentation, instead of tabs
-(setq-default indent-tabs-mode 
+(setq-default indent-tabs-mode
               nil)
 
 ;;Enable show-paren-mode

@@ -1,4 +1,4 @@
-(defvar super-emacs--my-keyboard-bindings 
+(defvar super-emacs--my-keyboard-bindings
   '(("C-}" . mc/mark-next-like-this)
     ("C-{" . mc/mark-previous-like-this)
     ("C-|" . mc/mark-all-like-this)
