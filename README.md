@@ -63,7 +63,7 @@ Pull super-emacs docker image and start `emacs`
 
 ### Key-bindings
 
-Refer [key-bindings.el](.emacs.d/super-emacs/key-bindings.el) for all the pre-configured key-bindings for your convenience.
+Refer [config-key-bindings.el](.emacs.d/super-emacs/config-key-bindings.el) for all the pre-configured key-bindings for your convenience.
 
 ## References
 
