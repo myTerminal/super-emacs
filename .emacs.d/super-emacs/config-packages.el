@@ -3,7 +3,7 @@
   (package-refresh-contents))
 
 ;;Declare a list of required packages
-(defvar super-emacs--required-packages
+(defvar se/configured-packages
   '(helm
     multiple-cursors
     ace-jump-mode
@@ -25,7 +25,7 @@
 ;;Install required packages
 (mapc (lambda (p)
         (package-install p))
-      super-emacs--required-packages)
+      se/configured-packages)
 
 ;;Configure and enable sublimity-mode
 (require 'sublimity-scroll)

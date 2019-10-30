@@ -1,4 +1,4 @@
-(defvar super-emacs--my-keyboard-bindings
+(defvar se/my-keyboard-bindings
   '(("C-}" . mc/mark-next-like-this)
     ("C-{" . mc/mark-previous-like-this)
     ("C-|" . mc/mark-all-like-this)
@@ -21,12 +21,7 @@
     ("C-S-<down>" . buf-move-down)
     ("C-S-<left>" . buf-move-left)
     ("C-S-<right>" . buf-move-right)
-    ("<f5>" . super-emacs-reload-current-file)))
+    ("<f5>" . se/reload-current-file)))
 
-(defun super-emacs-apply-keyboard-bindings (pair)
-  "Apply keyboard-bindings for supplied list of key-pair values"
-  (global-set-key (kbd (car pair))
-                  (cdr pair)))
-
-(mapc 'super-emacs-apply-keyboard-bindings
-      super-emacs--my-keyboard-bindings)
+(mapc 'se/assign-function-to-keys
+      se/my-keyboard-bindings)

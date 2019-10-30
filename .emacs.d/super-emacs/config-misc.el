@@ -1,10 +1,3 @@
-(defun super-emacs-reload-current-file ()
-  "Reload the file loaded in current buffer from the disk"
-  (interactive)
-  (cond (buffer-file-name (progn (find-alternate-file buffer-file-name)
-                                 (message "File reloaded")))
-        (t (message "You're not editing a file!"))))
-
 ;;Disable splash message, start *scratch* buffer by default
 (setq initial-buffer-choice
       t)
