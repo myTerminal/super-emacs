@@ -44,7 +44,7 @@ Pull super-emacs docker image and start `emacs`
 
 ### Pre-configured packages
 
-- [helm](https://github.com/emacs-helm/helm) to take your Emacs experience to the next level
+- [ivy](https://github.com/abo-abo/swiper) (along with counsel and swiper) to make your life easy in general
 - [sublimity](https://github.com/zk-phi/sublimity) to be able to scroll buffers smoothly
 - [multiple-cursors](https://github.com/magnars/multiple-cursors.el) to be able to edit text in style
 - [ace-jump-mode](https://github.com/winterTTr/ace-jump-mode) to be able to jump around quickly

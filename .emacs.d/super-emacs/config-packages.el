@@ -4,7 +4,7 @@
 
 ;;Declare a list of required packages
 (defvar se/configured-packages
-  '(helm
+  '(counsel
     multiple-cursors
     ace-jump-mode
     ace-window
@@ -76,8 +76,7 @@
     super-emacs-reload-current-file
     t)))
 
-;;Set up helm-mode
-(helm-mode 1)
-(helm-autoresize-mode 1)
-(setq helm-split-window-in-side-p
+;;Start ivy
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers
       t)
