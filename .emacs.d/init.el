@@ -1,5 +1,7 @@
+(defvar se/config-root
+  (file-name-directory load-file-name))
 (load (expand-file-name "super-emacs/core"
-			(file-name-directory load-file-name)))
+			se/config-root))
 (se/load-file "config-system")
 (se/load-file "config-repositories")
 (se/load-file "config-packages")
