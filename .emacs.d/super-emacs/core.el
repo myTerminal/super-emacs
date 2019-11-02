@@ -4,7 +4,7 @@
 
 ;;Define base-path
 (defvar se/base-path
-  "~/.emacs.d/super-emacs/")
+  (file-name-directory load-file-name))
 
 (defun se/load-file (file-path)
   "Loads the specified file and also it's customized version, if it exists"
