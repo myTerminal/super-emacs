@@ -1,0 +1,14 @@
+/*
+
+!/.gitignore
+
+!/.emacs.d
+/.emacs.d/*
+!/.emacs.d/super-emacs
+/.emacs.d/super-emacs/*-custom.el
+!/.emacs.d/init.el
+
+!/Dockerfile
+!/images
+!/LICENSE
+!/README.md
