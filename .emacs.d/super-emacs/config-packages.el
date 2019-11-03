@@ -4,31 +4,34 @@
 
 ;;Declare a list of required packages
 (defvar se/configured-packages
-  '(counsel
+  '(;;Text-editing
     multiple-cursors
+    auto-complete
+    undo-tree
+    sublimity
+    ;;Navigation
     ace-jump-mode
     ace-window
-    sublimity
-    powerline
     buffer-move
-    auto-complete
-    ztree
-    undo-tree
+    ;;File-system
     neotree
-    which-key
+    ztree
+    ;;Color themes
+    theme-looper
     overcast-theme
-    meta-presenter
+    ;;Super-powers
+    which-key
+    counsel
     myterminal-controls
-    theme-looper))
+    ;;Visual tweaks
+    powerline
+    ;;Misc
+    meta-presenter))
 
 ;;Install required packages
 (mapc (lambda (p)
         (package-install p))
       se/configured-packages)
-
-;;Configure and enable sublimity-mode
-(require 'sublimity-scroll)
-(sublimity-mode)
 
 ;;Load default auto-complete configs
 (ac-config-default)
@@ -36,8 +39,9 @@
 ;;Start undo-tree
 (global-undo-tree-mode)
 
-;;Start which-key-mode
-(which-key-mode)
+;;Configure and enable sublimity-mode
+(require 'sublimity-scroll)
+(sublimity-mode)
 
 ;;Set up ace-jump-mode
 (autoload 'ace-jump-mode
@@ -49,17 +53,20 @@
   "Ace jump back:-"
   t)
 
-;;Enable powerline
-(powerline-center-theme)
-(setq powerline-default-separator
-      'slant)
-
 ;;Configure theme-looper
 (theme-looper-set-favorite-themes '(deeper-blue
 				    wheatgrass
 				    wombat
 				    overcast))
 (theme-looper-set-post-switch-script 'powerline-reset)
+
+;;Start which-key-mode
+(which-key-mode)
+
+;;Start ivy
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers
+      t)
 
 ;;Configure myterminal-controls
 (myterminal-controls-set-controls-data
@@ -71,7 +78,7 @@
     super-emacs-reload-current-file
     t)))
 
-;;Start ivy
-(ivy-mode 1)
-(setq ivy-use-virtual-buffers
-      t)
+;;Enable powerline
+(powerline-center-theme)
+(setq powerline-default-separator
+      'slant)
