@@ -12,6 +12,7 @@
     ("C-}" . mc/mark-next-like-this)
     ("C-{" . mc/mark-previous-like-this)
     ("C-|" . mc/mark-all-like-this)
+    ("M-y" . counsel-yank-pop)
     ("M-/" . undo-tree-visualize)
     ("C-s" . swiper)
     ("<f5>" . se/reload-current-file)
