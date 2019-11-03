@@ -55,7 +55,6 @@ Pull super-emacs docker image and start `emacs`
 - [ztree](https://github.com/fourier/ztree) for an efficient directory tree comparison
 - [undo-tree](https://github.com/emacsmirror/undo-tree) to be able to visualize your changes in a buffer
 - [neotree](https://github.com/jaypei/emacs-neotree) to be able to spawn a tree at any directory
-- [dired-launch](https://github.com/thomp/dired-launch) to be able to open files with their default applications from within `dired`
 - [which-key](https://github.com/justbur/emacs-which-key) to be suggested with what you can do after pressing `C-x`
 - [meta-presenter](https://github.com/myTerminal/meta-presenter) for presenting slide-shows from within Emacs
 - [myterminal-controls](https://github.com/myTerminal/myterminal-controls) for quick-toggle controls at a key-stroke

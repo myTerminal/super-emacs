@@ -15,7 +15,6 @@
     ztree
     undo-tree
     neotree
-    dired-launch
     which-key
     overcast-theme
     meta-presenter
@@ -36,10 +35,6 @@
 
 ;;Start undo-tree
 (global-undo-tree-mode)
-
-;;Set hooks for dired-launch-mode
-(add-hook 'dired-mode-hook
-          'dired-launch-mode)
 
 ;;Start which-key-mode
 (which-key-mode)
