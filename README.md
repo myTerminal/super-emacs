@@ -47,6 +47,8 @@ Pull super-emacs docker image and start `emacs`
 - [ivy](https://github.com/abo-abo/swiper) (along with counsel and swiper) to make your life easy in general
 - [sublimity](https://github.com/zk-phi/sublimity) to be able to scroll buffers smoothly
 - [multiple-cursors](https://github.com/magnars/multiple-cursors.el) to be able to edit text in style
+- [projectile](https://github.com/bbatsov/projectile) to be able to work with projects as you do in modern IDEs
+- [counsel-projectile](https://github.com/ericdanan/counsel-projectile) to enable ivy integration for projectile
 - [dumb-jump](https://github.com/jacktasia/dumb-jump) to provide a 'zero-configuration' setup for "jump-to-definition"
 - [ace-jump-mode](https://github.com/winterTTr/ace-jump-mode) to be able to jump around quickly
 - [ace-window](https://github.com/abo-abo/ace-window) to be able to switch windows visually

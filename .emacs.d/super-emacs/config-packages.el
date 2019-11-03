@@ -14,6 +14,8 @@
     ace-jump-mode
     ace-window
     buffer-move
+    ;;Programming tools
+    projectile
     ;;File-system
     ranger
     neotree
@@ -24,6 +26,7 @@
     ;;Super-powers
     which-key
     counsel
+    counsel-projectile
     myterminal-controls
     ;;Visual tweaks
     powerline
@@ -58,6 +61,25 @@
   "Ace jump back:-"
   t)
 
+;;Configure projectile and counsel-projectile
+(if (eq system-type
+          'windows-nt)
+      (setq projectile-indexing-method
+            'alien))
+  (setq projectile-switch-project-action
+        (lambda ()
+          (cond ((and (fboundp 'neo-global--window-exists-p)
+                      (neo-global--window-exists-p))
+                 (neotree-projectile-action))
+                (t (counsel-projectile)))))
+  (setq projectile-mode-line
+        '(:eval (format " Project:%s"
+                        (projectile-project-name))))
+  (projectile-mode)
+  (define-key projectile-mode-map
+              (kbd "C-c C-p")
+              'projectile-command-map)
+
 ;;Configure theme-looper
 (theme-looper-set-favorite-themes '(deeper-blue
 				    wheatgrass
@@ -72,6 +94,11 @@
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers
       t)
+(setq projectile-completion-system
+      'ivy)
+
+;;Enable counsel-projectile
+(counsel-projectile-mode)
 
 ;;Configure myterminal-controls
 (myterminal-controls-set-controls-data

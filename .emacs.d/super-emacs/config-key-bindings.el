@@ -9,6 +9,7 @@
     ("C-s" . swiper)
     ("C->" . ace-jump-mode)
     ("C-<" . ace-jump-mode-pop-mark)
+    ("C-x p" . projectile-mode)
     ("M-/" . undo-tree-visualize)
     ("C-\," . neotree-toggle)
     ("C-)" . theme-looper-enable-next-theme)
