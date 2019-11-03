@@ -34,6 +34,8 @@ Pull super-emacs docker image and start `emacs`
 - Minimal interface with almost everything except the window turned off
 - [overcast-theme](http://github.com/myTerminal/overcast-theme) applied by default, with a readable font-size
 - [MELPA](http://melpa.org) added as a package archive
+- Easy IDE-like project interaction with [projectile](https://github.com/bbatsov/projectile) and [dumb-jump](https://github.com/jacktasia/dumb-jump)
+- Opinionatedly better file-management with [ranger.el](https://github.com/ralesi/ranger.el)
 - Smooth scrolling with [sublimity](https://github.com/zk-phi/sublimity)
 - Navigation through buffers simplified with [winner](http://emacswiki.org/emacs/WinnerMode) and [windmove](http://emacswiki.org/emacs/WindMove).
 - See command suggestions when `C-x` is pressed, using [which-key](https://github.com/justbur/emacs-which-key)
