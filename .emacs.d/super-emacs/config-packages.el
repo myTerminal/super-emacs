@@ -10,6 +10,7 @@
     undo-tree
     sublimity
     ;;Navigation
+    dumb-jump
     ace-jump-mode
     ace-window
     buffer-move
@@ -42,6 +43,9 @@
 ;;Configure and enable sublimity-mode
 (require 'sublimity-scroll)
 (sublimity-mode)
+
+;;Enable dumb-jump
+(dumb-jump-mode)
 
 ;;Set up ace-jump-mode
 (autoload 'ace-jump-mode
