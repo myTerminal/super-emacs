@@ -53,6 +53,7 @@ Pull super-emacs docker image and start `emacs`
 - [powerline](https://github.com/milkypostman/powerline) to decorate your mode-line and make it more informative
 - [buffer-move](http://www.emacswiki.org/emacs/buffer-move.el) for moving buffers within windows quickly
 - [auto-complete](https://github.com/auto-complete/auto-complete) for easy text editing
+- [ranger.el](https://github.com/ralesi/ranger.el) to bring a ranger-like file-manager to Emacs
 - [ztree](https://github.com/fourier/ztree) for an efficient directory tree comparison
 - [undo-tree](https://github.com/emacsmirror/undo-tree) to be able to visualize your changes in a buffer
 - [neotree](https://github.com/jaypei/emacs-neotree) to be able to spawn a tree at any directory

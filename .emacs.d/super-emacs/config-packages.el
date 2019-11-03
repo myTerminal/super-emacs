@@ -15,6 +15,7 @@
     ace-window
     buffer-move
     ;;File-system
+    ranger
     neotree
     ztree
     ;;Color themes
