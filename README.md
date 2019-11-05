@@ -9,9 +9,9 @@
 [![License](https://img.shields.io/badge/LICENSE-GPL%20v3.0-blue.svg)](https://www.gnu.org/licenses/gpl.html)
 [![Join the chat at https://gitter.im/myTerminal/super-emacs](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/myTerminal/super-emacs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-An out-of-the-box Emacs configuration with superpowers, now also on Docker!
+An out-of-the-box Emacs configuration with super-powers
 
-## Video
+## An old video demo
 
 [![http://img.youtube.com/vi/mRoGM_-8K9g/0.jpg](http://img.youtube.com/vi/mRoGM_-8K9g/0.jpg)](http://www.youtube.com/watch?v=mRoGM_-8K9g)
 
@@ -19,13 +19,19 @@ An out-of-the-box Emacs configuration with superpowers, now also on Docker!
 
 Clone the repository with
 
-    git clone https://github.com/myTerminal/super-emacs
+    git clone https://github.com/myTerminal/super-emacs.git
 
-or download the repository as an archive and place it at your `home` directory. Once done, start Emacs or well, super Emacs.
+The only requirement for these configs to be used by your Emacs is that the directory [.emacs.d](.emacs.d) should be at the root of your home directory.
+
+You can either place it there manually or otherwise create a soft-link from its location to home. One advantage of the second method is that you can seamlessly pull updates from upstream without any manual steps.
+
+    ln -s </path/to/cloned/project>/super-emacs/.emacs.d ~/.emacs.d
+
+Once done, start Emacs to enjoy new super-powers.
 
 ## Docker
 
-Pull super-emacs docker image and start `emacs`
+*super-emacs* is also available on Docker. To start it, run a command that looks like:
 
     docker pull myterminal/super-emacs
 
@@ -76,8 +82,8 @@ Refer [config-key-bindings.el](.emacs.d/super-emacs/config-key-bindings.el) for 
 
 All configuration files under [.emacs.d/super-emacs](.emacs.d/super-emacs) with a name starting with `config-` can be extended by creating another file next to it with the same name but ending with a `-custom.el`. For example, if you plan to extend the file [config-packages.el](.emacs.d/super-emacs/config-packages.el), you can create a file with the name `config-packages-custom.el` next to it in order to hold custom configuration. *super-emacs* will load the original file first followed by the custom file (if it exists) in the right order as designed and you will achieve the effect you desire. Whenever there's an update to the original file, there will be no merge conflicts and life would be so much simpler!
 
-## References
+## More
 
-If you are looking for a light-weight configuration, try [ample-emacs](https://github.com/myTerminal/ample-emacs).
+If you're looking for a light-weight setup, try [ample-emacs](https://github.com/myTerminal/ample-emacs).
 
-For an even more comprehensive configuration, refer to my [dotfiles](https://github.com/myTerminal/dotfiles).
+For an even more comprehensive setup, refer to my [dotfiles](https://github.com/myTerminal/dotfiles).
