@@ -60,27 +60,36 @@ Once done, start Emacs to enjoy new super-powers.
 
 ### Pre-configured packages
 
-- [ivy](https://github.com/abo-abo/swiper) (along with counsel and swiper) to make your life easy in general
-- [sublimity](https://github.com/zk-phi/sublimity) to be able to scroll buffers smoothly
-- [multiple-cursors](https://github.com/magnars/multiple-cursors.el) to be able to edit text in style
-- [projectile](https://github.com/bbatsov/projectile) to be able to work with projects as you do in modern IDEs
-- [counsel-projectile](https://github.com/ericdanan/counsel-projectile) to enable ivy integration for projectile
-- [dumb-jump](https://github.com/jacktasia/dumb-jump) to provide a 'zero-configuration' setup for "jump-to-definition"
-- [ace-jump-mode](https://github.com/winterTTr/ace-jump-mode) to be able to jump around quickly
-- [ace-window](https://github.com/abo-abo/ace-window) to be able to switch windows visually
-- [powerline](https://github.com/milkypostman/powerline) to decorate your mode-line and make it more informative
-- [buffer-move](http://www.emacswiki.org/emacs/buffer-move.el) for moving buffers within windows quickly
-- [auto-complete](https://github.com/auto-complete/auto-complete) for easy text editing
-- [ranger.el](https://github.com/ralesi/ranger.el) to bring a ranger-like file-manager to Emacs
-- [ztree](https://github.com/fourier/ztree) for an efficient directory tree comparison
-- [undo-tree](https://github.com/emacsmirror/undo-tree) to be able to visualize your changes in a buffer
-- [neotree](https://github.com/jaypei/emacs-neotree) to be able to spawn a tree at any directory
-- [which-key](https://github.com/justbur/emacs-which-key) to be suggested with what you can do after pressing `C-x`
-- [meta-presenter](https://github.com/myTerminal/meta-presenter) for presenting slide-shows from within Emacs
-- [myterminal-controls](https://github.com/myTerminal/myterminal-controls) for quick-toggle controls at a key-stroke
-- [theme-looper](https://github.com/myTerminal/theme-looper) for switching themes in style
+- Text-editing
+    - [multiple-cursors](https://github.com/magnars/multiple-cursors.el) to allow spawning of multiple cursors to editing text that follows a particular pattern
+    - [auto-complete](https://github.com/auto-complete/auto-complete) to intelligently save key-strokes
+    - [undo-tree](https://github.com/emacsmirror/undo-tree) to provide a means to move back to a particular point of time through a visual timeline of changes
+    - [sublimity](https://github.com/zk-phi/sublimity) to be able to scroll buffers smoothly
+- Navigation
+    - [dumb-jump](https://github.com/jacktasia/dumb-jump) to provide a 'zero-configuration' setup for "jump-to-definition" to quickly jump to implementation of a particular function to see its implementation
+    - [ace-jump-mode](https://github.com/winterTTr/ace-jump-mode) to be able to jump around in a buffer (and back) quickly
+    - [ace-window](https://github.com/abo-abo/ace-window) to be able to switch windows visually with minimal key-presses
+    - [buffer-move](http://www.emacswiki.org/emacs/buffer-move.el) for moving buffers within windows like a breeze
+- Programming tools
+    - [projectile](https://github.com/bbatsov/projectile) to be able to work with projects as you do in modern IDEs
+- File-system
+    - [ranger.el](https://github.com/ralesi/ranger.el) to bring a ranger-like file-manager to Emacs
+    - [neotree](https://github.com/jaypei/emacs-neotree) to be able to spawn a tree at any directory
+    - [ztree](https://github.com/fourier/ztree) for an efficient directory tree comparison
+- Color themes
+    - [theme-looper](https://github.com/myTerminal/theme-looper) for switching themes in style
+    - [overcast-theme](https://github.com/myTerminal/overcast-theme) as a dark color theme
+- Super-powers
+    - [which-key](https://github.com/justbur/emacs-which-key) to provide instant help around key-bindings as you press keys
+    - [ivy](https://github.com/abo-abo/swiper) (along with counsel and swiper) to make your experience with Emacs better
+    - [counsel-projectile](https://github.com/ericdanan/counsel-projectile) to enable ivy integration for projectile
+    - [myterminal-controls](https://github.com/myTerminal/myterminal-controls) for quick-toggle controls that can be spawned with a single key-stroke
+- Visual tweaks
+    - [powerline](https://github.com/milkypostman/powerline) to decorate your mode-line and add more information
+- Miscellaneous
+    - [meta-presenter](https://github.com/myTerminal/meta-presenter) for presenting slide-shows from within Emacs using markdown files
 
-### Major differences over stock Emacs
+### Added key-bindings over stock Emacs
 
 Refer [config-key-bindings.el](.emacs.d/super-emacs/config-key-bindings.el) for all the pre-configured key-bindings for your convenience.
 
