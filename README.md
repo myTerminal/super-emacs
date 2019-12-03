@@ -103,4 +103,4 @@ All configuration files under [.emacs.d/super-emacs](.emacs.d/super-emacs) with 
 
 If you're looking for a light-weight setup, try [ample-emacs](https://github.com/myTerminal/ample-emacs).
 
-For an even more comprehensive setup, refer to my [dotfiles](https://github.com/myTerminal/dotfiles).
+For an even more comprehensive setup, refer to [my personal configs](https://github.com/myTerminal/.emacs.d).
