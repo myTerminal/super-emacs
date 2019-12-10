@@ -30,6 +30,11 @@
     myterminal-controls
     ;;Visual tweaks
     powerline
+    ;;Statistical computing
+    ess
+    polymode
+    poly-R
+    poly-markdown
     ;;Misc
     meta-presenter))
 

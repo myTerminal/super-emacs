@@ -57,6 +57,7 @@ Once done, start Emacs to enjoy new super-powers.
 - Super-easy file system navigation with [neotree](https://github.com/jaypei/emacs-neotree)
 - No more welcome screen, Emacs starts up to greet you and shows the date
 - Reload file in a buffer quickly with `<f5>`
+- Statistical computing with [R Markdown](https://rmarkdown.rstudio.com) files through [ESS](https://github.com/emacs-ess/ESS) and [polymode](https://github.com/polymode/polymode)
 - Some more configuration to improve usability
 
 ### Pre-configured packages
@@ -89,6 +90,7 @@ Once done, start Emacs to enjoy new super-powers.
     - [powerline](https://github.com/milkypostman/powerline) to decorate your mode-line and add more information
 - Miscellaneous
     - [meta-presenter](https://github.com/myTerminal/meta-presenter) for presenting slide-shows from within Emacs using markdown files
+    - [ESS](https://github.com/emacs-ess/ESS), [polymode](https://github.com/polymode/polymode), [poly-R](https://github.com/polymode/poly-R) and [poly-markdown](https://github.com/polymode/poly-markdown) for statistical computing with [R Markdown](https://rmarkdown.rstudio.com) files.
 
 ### Added key-bindings over stock Emacs
 
@@ -111,6 +113,10 @@ OR
     brew install aspell
 
 depending upon your operating system.
+
+#### [R](https://www.r-project.org) for statistical computing
+
+To be able to work with R Markdown files, *super-emacs* comes pre-configured with all the required packages except for an external dependency on [R](https://www.r-project.org) which needs to be installed on the system.
 
 ## Customizing
 
