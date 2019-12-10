@@ -51,6 +51,7 @@ Once done, start Emacs to enjoy new super-powers.
 - Easy IDE-like project interaction with [projectile](https://github.com/bbatsov/projectile) and [dumb-jump](https://github.com/jacktasia/dumb-jump)
 - Opinionatedly better file-management with [ranger.el](https://github.com/ralesi/ranger.el)
 - Smooth scrolling with [sublimity](https://github.com/zk-phi/sublimity)
+- Spell-check with [ispell](https://www.emacswiki.org/emacs/InteractiveSpell) using an external spell checker [aspell](http://aspell.net)
 - Navigation through buffers simplified with [winner](http://emacswiki.org/emacs/WinnerMode) and [windmove](http://emacswiki.org/emacs/WindMove).
 - See command suggestions when `C-x` is pressed, using [which-key](https://github.com/justbur/emacs-which-key)
 - Super-easy file system navigation with [neotree](https://github.com/jaypei/emacs-neotree)
@@ -92,6 +93,24 @@ Once done, start Emacs to enjoy new super-powers.
 ### Added key-bindings over stock Emacs
 
 Refer [config-key-bindings.el](.emacs.d/super-emacs/config-key-bindings.el) for all the pre-configured key-bindings for your convenience.
+
+### Optional external dependencies
+
+####  [aspell](http://aspell.net) for spell-check
+
+The presence of this package is detected for use with `ispell` for spell-check. Refer to [the official site](http://aspell.net) for instructions on how to install it on your operating system.
+
+It could be as easy as
+
+    # For Fedora
+    dnf install aspell
+
+OR
+
+    # For macOS
+    brew install aspell
+
+depending upon your operating system.
 
 ## Customizing
 

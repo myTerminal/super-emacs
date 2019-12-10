@@ -1,3 +1,9 @@
+;;System
+(if (eq system-type
+        'darwin)
+    (add-to-list 'exec-path
+                 "/usr/local/bin"))
+
 ;;Startup
 (setq initial-buffer-choice
       t)
@@ -25,6 +31,17 @@
 (setq kill-whole-line
       t)
 (prefer-coding-system 'utf-8-unix)
+
+;;Spell-check
+(let ((path-to-aspell (locate-file "aspell"
+                                   exec-path
+                                   exec-suffixes
+                                   1)))
+  (unless (null path-to-aspell)
+    (progn
+      (add-to-list 'exec-path (file-name-directory path-to-aspell))
+      (setq ispell-program-name "aspell")
+      (setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_US")))))
 
 ;;Package archives and 'customize'
 (setq custom-file
