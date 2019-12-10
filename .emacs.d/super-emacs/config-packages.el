@@ -87,6 +87,10 @@
 				    overcast))
 (theme-looper-set-post-switch-script 'powerline-reset)
 
+;;Set the default theme
+(load-theme 'overcast
+            t)
+
 ;;Start which-key-mode
 (which-key-mode)
 
