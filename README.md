@@ -104,8 +104,18 @@ The presence of this package is detected for use with `ispell` for spell-check. 
 
 It could be as easy as
 
+    # For Debian/Ubuntu
+    apt install aspell
+
+OR
+
     # For Fedora
     dnf install aspell
+
+OR
+
+    # For Arch Linux
+    pacman -S aspell
 
 OR
 
