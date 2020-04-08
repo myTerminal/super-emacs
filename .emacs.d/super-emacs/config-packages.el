@@ -90,7 +90,8 @@
 				    wheatgrass
 				    wombat
 				    overcast))
-(theme-looper-set-post-switch-script 'powerline-reset)
+(add-hook 'theme-looper-post-switch-hook
+          'powerline-reset)
 
 ;;Set the default theme
 (load-theme 'overcast
