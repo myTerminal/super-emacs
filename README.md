@@ -71,7 +71,7 @@ Emacs 27 [comes with XDG support](https://git.savannah.gnu.org/cgit/emacs.git/co
 
 - Text-editing
     - [multiple-cursors](https://github.com/magnars/multiple-cursors.el) to allow spawning of multiple cursors to editing text that follows a particular pattern
-    - [auto-complete](https://github.com/auto-complete/auto-complete) to intelligently save key-strokes
+    - [company](https://github.com/company-mode/company-mode) for auto-completion
     - [undo-tree](https://github.com/emacsmirror/undo-tree) to provide a means to move back to a particular point of time through a visual timeline of changes
     - [sublimity](https://github.com/zk-phi/sublimity) to be able to scroll buffers smoothly
 - Navigation

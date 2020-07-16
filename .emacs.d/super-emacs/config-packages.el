@@ -6,7 +6,7 @@
 (defvar se/configured-packages
   '(;;Text-editing
     multiple-cursors
-    auto-complete
+    company
     undo-tree
     sublimity
     ;;Navigation
@@ -43,8 +43,9 @@
         (package-install p))
       se/configured-packages)
 
-;;Load default auto-complete configs
-(ac-config-default)
+;;Start company-mode globally
+(add-hook 'after-init-hook
+          'global-company-mode)
 
 ;;Start undo-tree
 (global-undo-tree-mode)
