@@ -2,7 +2,7 @@
   (file-name-directory load-file-name))
 (load (expand-file-name "super-emacs/core"
 			se/config-root))
-(se/load-file "config-misc")
-(se/load-file "config-packages")
-(se/load-file "config-key-bindings")
+(se/load-file "standard/misc")
+(se/load-file "standard/packages")
+(se/load-file "standard/key-bindings")
 (se/print-startup-message)
