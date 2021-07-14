@@ -1,53 +1,53 @@
-;;Create repositories cache, if required
+;; Create repositories cache, if required
 (when (not package-archive-contents)
   (package-refresh-contents))
 
-;;Declare a list of required packages
+;; Declare a list of required packages
 (defvar se/configured-packages-basic
-  '(;;Text-editing
+  '(;; Text-editing
     multiple-cursors
     company
     undo-tree
-    ;;Navigation
+    ;; Navigation
     dumb-jump
     ace-jump-mode
     ace-window
     buffer-move
-    ;;Programming tools
+    ;; Programming tools
     projectile
-    ;;File-system
+    ;; File-system
     ranger
     neotree
     ztree
-    ;;Super-powers
+    ;; Super-powers
     which-key
     counsel
     counsel-projectile
     myterminal-controls
-    ;;Statistical computing
+    ;; Statistical computing
     ess
     polymode
     poly-R
     poly-markdown
-    ;;Misc
+    ;; Misc
     meta-presenter))
 
-;;Install required packages
+;; Install required packages
 (mapc (lambda (p)
         (package-install p))
       se/configured-packages-basic)
 
-;;Start company-mode globally
+;; Start company-mode globally
 (add-hook 'after-init-hook
           'global-company-mode)
 
-;;Start undo-tree
+;; Start undo-tree
 (global-undo-tree-mode)
 
-;;Enable dumb-jump
+;; Enable dumb-jump
 (dumb-jump-mode)
 
-;;Set up ace-jump-mode
+;; Set up ace-jump-mode
 (autoload 'ace-jump-mode
   "ace-jump-mode"
   "Emacs quick move minor mode"
@@ -57,7 +57,7 @@
   "Ace jump back:-"
   t)
 
-;;Configure projectile and counsel-projectile
+;; Configure projectile and counsel-projectile
 (if (eq system-type
           'windows-nt)
       (setq projectile-indexing-method
@@ -76,20 +76,20 @@
               (kbd "C-c C-p")
               'projectile-command-map)
 
-;;Start which-key-mode
+;; Start which-key-mode
 (which-key-mode)
 
-;;Start ivy
+;; Start ivy
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers
       t)
 (setq projectile-completion-system
       'ivy)
 
-;;Enable counsel-projectile
+;; Enable counsel-projectile
 (counsel-projectile-mode)
 
-;;Configure myterminal-controls
+;; Configure myterminal-controls
 (myterminal-controls-set-controls-data
  '(("." "Switch to next color-theme"
     theme-looper-enable-next-theme)

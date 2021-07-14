@@ -1,19 +1,19 @@
-;;System
+;; System
 (if (eq system-type
         'darwin)
     (add-to-list 'exec-path
                  "/usr/local/bin"))
 
-;;Startup
+;; Startup
 (setq initial-buffer-choice
       t)
 (setq initial-scratch-message
       "")
 
-;;Interface
+;; Interface
 (menu-bar-mode -1)
 
-;;Text editing
+;; Text editing
 (electric-pair-mode)
 (show-paren-mode)
 (global-hl-line-mode -1)
@@ -25,7 +25,7 @@
       t)
 (prefer-coding-system 'utf-8-unix)
 
-;;Spell-check
+;; Spell-check
 (let ((path-to-aspell (locate-file "aspell"
                                    exec-path
                                    exec-suffixes
@@ -38,7 +38,7 @@
 (add-hook 'text-mode-hook
           'flyspell-mode)
 
-;;Package archives and 'customize'
+;; Package archives and 'customize'
 (setq custom-file
       (concat se/config-root
               "custom.el"))
@@ -53,6 +53,6 @@
              t)
 (package-initialize)
 
-;;Misc
+;; Misc
 (winner-mode t)
 (windmove-default-keybindings)

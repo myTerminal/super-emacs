@@ -1,4 +1,4 @@
-;;Interface
+;; Interface
 (setq frame-title-format
       "%b - super-emacs")
 (tool-bar-mode -1)

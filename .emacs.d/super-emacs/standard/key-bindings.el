@@ -1,5 +1,5 @@
 (defvar se/my-keyboard-bindings-standard
-  '(;;Misc
+  '(;; Misc
     ("C-)" . theme-looper-enable-next-theme)
     ("C-(" . theme-looper-enable-previous-theme)))
 
