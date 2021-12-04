@@ -4,7 +4,9 @@
 
 !/.emacs.d
 /.emacs.d/*
-!/.emacs.d/super-emacs
+!/.emacs.d/modes
+!/.emacs.d/core.el
+!/.emacs.d/lib.el
 !/.emacs.d/init.el
 
 !/Dockerfile

@@ -102,7 +102,7 @@ Emacs 27 [comes with XDG support](https://git.savannah.gnu.org/cgit/emacs.git/co
 
 ### Added key-bindings over stock Emacs
 
-Refer [config-key-bindings.el](.emacs.d/super-emacs/config-key-bindings.el) for all the pre-configured key-bindings for your convenience.
+Refer [basic/key-bindings.el](.emacs.d/modes/basic/key-bindings.el) and [standard/key-bindings.el](.emacs.d/modes/standard/key-bindings.el) for all the pre-configured key-bindings for your convenience.
 
 ### Optional external dependencies
 
@@ -140,7 +140,7 @@ To be able to work with R Markdown files, *super-emacs* comes pre-configured wit
 
 Not everyone has the same setup and that means that you can (and may) change the configuration files according to your need. However, if you plan to clone this project, use it for your Emacs through a soft-link and pull updates from upstream regularly, there's a high probability that future improvements may end up resulting in merge conflicts on your local workspace. To solve this problem (and according to a suggestion from [@ericllazarus](https://github.com/ericllazarus)), *super-emacs* has been redesigned in a way that it now enables the user to extend their configuration without causing conflicts with future updates. One recommended way of extending *super-emacs* is described below.
 
-All configuration files under [.emacs.d/super-emacs/basic](.emacs.d/super-emacs/basic) and [.emacs.d/super-emacs/standard](.emacs.d/super-emacs/standard) can be extended through contents in their neigboring `*-custom.el` file. For example, if you plan to extend the file [basic/packages.el](.emacs.d/super-emacs/basic/packages.el), you can place your personal configuration in the file [basic/packages-custom.el](.emacs.d/super-emacs/basic/packages-custom.el). *super-emacs* will load the files in the right order so that your custom configurations will override the ones from *super-emacs*. This way, whenever there's an update to the original file, there will be no merge conflicts and life would be so much simpler!
+All configuration files under [.emacs.d/modes/basic](.emacs.d/modes/basic) and [.emacs.d/modes/standard](.emacs.d/modes/standard) can be extended through contents in their neigboring `*-custom.el` file. For example, if you plan to extend the file [basic/packages.el](.emacs.d/modes/basic/packages.el), you can place your personal configuration in the file [basic/packages-custom.el](.emacs.d/modes/basic/packages-custom.el). *super-emacs* will load the files in the right order so that your custom configurations will override the ones from *super-emacs*. This way, whenever there's an update to the original file, there will be no merge conflicts and life would be so much simpler!
 
 ## More
 
