@@ -1,21 +1,15 @@
-;; Create repositories cache, if required
-(when (not package-archive-contents)
-  (package-refresh-contents))
-
-;; Declare a list of required packages
-(defvar se/configured-packages-standard
+(defvar se/packages-standard
   '(;; Text-editing
-    sublimity
+    (sublimity github "zk-phi/sublimity" t)
     ;; Color themes
-    theme-looper
-    overcast-theme
+    (theme-looper github "myTerminal/theme-looper" nil)
+    (overcast-theme github "myTerminal/overcast-theme" nil)
     ;; Visual tweaks
-    powerline))
+    (powerline github "milkypostman/powerline" t)
+    ))
 
-;; Install required packages
-(mapc (lambda (p)
-        (package-install p))
-      se/configured-packages-standard)
+(mapc 'se/install-package-with-quelpa
+      se/packages-standard)
 
 ;; Configure and enable sublimity-mode
 (require 'sublimity-scroll)
@@ -23,9 +17,9 @@
 
 ;; Configure theme-looper
 (theme-looper-set-favorite-themes '(deeper-blue
-				    wheatgrass
-				    wombat
-				    overcast))
+				                    wheatgrass
+				                    wombat
+				                    overcast))
 (add-hook 'theme-looper-post-switch-hook
           'powerline-reset)
 

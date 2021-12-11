@@ -1,41 +1,35 @@
-;; Create repositories cache, if required
-(when (not package-archive-contents)
-  (package-refresh-contents))
-
-;; Declare a list of required packages
-(defvar se/configured-packages-basic
+(defvar se/packages-basic
   '(;; Text-editing
-    multiple-cursors
-    company
-    undo-tree
+    (multiple-cursors github "magnars/multiple-cursors.el" t)
+    (company github "company-mode/company-mode" t)
+    (undo-tree-0.7.5 url "https://elpa.gnu.org/packages/undo-tree-0.7.5.el" t)
     ;; Navigation
-    dumb-jump
-    ace-jump-mode
-    ace-window
-    buffer-move
+    (dumb-jump github "jacktasia/dumb-jump" t)
+    (ace-jump-mode github "winterTTr/ace-jump-mode" t)
+    (ace-window github "abo-abo/ace-window" t)
+    (buffer-move github "lukhas/buffer-move" t)
     ;; Programming tools
-    projectile
+    (projectile github "bbatsov/projectile" t)
+    (counsel-projectile github "ericdanan/counsel-projectile" t)
     ;; File-system
-    ranger
-    neotree
-    ztree
+    (ranger github "ralesi/ranger" t)
+    (neotree github "jaypei/emacs-neotree" t)
+    (ztree github "fourier/ztree" nil)
     ;; Super-powers
-    which-key
-    counsel
-    counsel-projectile
-    myterminal-controls
+    (which-key github "justbur/emacs-which-key" t)
+    (counsel github "abo-abo/swiper" t ("counsel.el"))
+    (myterminal-controls github "myTerminal/myterminal-controls" t)
     ;; Statistical computing
-    ess
-    polymode
-    poly-R
-    poly-markdown
+    (ess github "emacs-ess/ESS" t ("*.el" "lisp/*.el"))
+    (polymode github "polymode/polymode" t)
+    (poly-R github "polymode/poly-R" t)
+    (poly-markdown github "polymode/poly-markdown" t)
     ;; Misc
-    meta-presenter))
+    (meta-presenter github "myTerminal/meta-presenter" t)
+    ))
 
-;; Install required packages
-(mapc (lambda (p)
-        (package-install p))
-      se/configured-packages-basic)
+(mapc 'se/install-package-with-quelpa
+      se/packages-basic)
 
 ;; Start company-mode globally
 (add-hook 'after-init-hook
