@@ -52,6 +52,11 @@
              '("melpa" . "https://melpa.org/packages/")
              t)
 (package-initialize)
+(unless (package-installed-p 'quelpa)
+  (with-temp-buffer
+    (url-insert-file-contents "https://raw.githubusercontent.com/quelpa/quelpa/master/quelpa.el")
+    (eval-buffer)
+    (quelpa-self-upgrade)))
 
 ;; Misc
 (winner-mode t)
