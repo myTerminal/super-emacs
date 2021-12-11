@@ -25,3 +25,40 @@
             (kbd (car b))
             (cdr b)))
         bindings))
+
+(defun se/move-line-up ()
+  "Moves the current line up by one step."
+  (interactive)
+  (transpose-lines 1)
+  (forward-line -2))
+
+(defun se/move-line-down ()
+  "Moves the current line down by one step."
+  (interactive)
+  (forward-line 1)
+  (transpose-lines 1)
+  (forward-line -1))
+
+(defun se/delete-word-backward ()
+  "Deletes the word on the left of the cursor."
+  (interactive)
+  (set-mark-command nil)
+  (backward-word)
+  (backward-delete-char-untabify 1))
+
+(defun se/eval-and-replace ()
+  "Replaces expression to the left with it's value in the current buffer."
+  (interactive)
+  (backward-kill-sexp)
+  (prin1 (eval (read (current-kill 0)))
+         (current-buffer)))
+
+(defun se/switch-to-previous-buffer ()
+  "Switch to most recent buffer."
+  (interactive)
+  (switch-to-buffer (other-buffer (current-buffer) 1)))
+
+(defun se/kill-this-buffer ()
+  "Kill the current buffer."
+  (interactive)
+  (kill-buffer (current-buffer)))

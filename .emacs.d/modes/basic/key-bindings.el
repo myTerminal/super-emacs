@@ -1,6 +1,7 @@
 (se/bind-keys '(
                 ;; Buffer/Window management
                 ("C-x b" . ivy-switch-buffer)
+                ("C-c p" . se/switch-to-previous-buffer)
                 ("C-x C-f" . counsel-find-file)
                 ("C-x C-r" . counsel-recentf)
                 ("C-S-<up>" . buf-move-up)
@@ -8,11 +9,15 @@
                 ("C-S-<left>" . buf-move-left)
                 ("C-S-<right>" . buf-move-right)
                 ("C-;" . ace-window)
+                ("C-x k" . se/kill-this-buffer)
                 ;; Text-editing
                 ("C-}" . mc/mark-next-like-this)
                 ("C-{" . mc/mark-previous-like-this)
                 ("C-|" . mc/mark-all-like-this)
                 ("M-y" . counsel-yank-pop)
+                ("M-<down>" . se/move-line-down)
+                ("M-<up>" . se/move-line-up)
+                ("C-<backspace>" . se/delete-word-backward)
                 ("M-/" . undo-tree-visualize)
                 ("C-s" . swiper)
                 ("<f5>" . se/reload-current-file)
@@ -22,6 +27,7 @@
                 ("C-\," . neotree-toggle)
                 ("C-x p" . projectile-mode)
                 ;; Misc
+                ("C-=" . se/eval-and-replace)
                 ("C-c M-x" . execute-extended-command)
                 ("M-x" . counsel-M-x)
                 ("C-M-'" . myterminal-controls-open-controls))
