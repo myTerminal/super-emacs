@@ -14,6 +14,7 @@
 (menu-bar-mode -1)
 
 ;; Text editing
+(column-number-mode)
 (electric-pair-mode)
 (show-paren-mode)
 (global-hl-line-mode -1)
@@ -21,9 +22,12 @@
               nil)
 (set-default 'cursor-type
              'hbar)
+(delete-selection-mode 1)
 (setq kill-whole-line
       t)
 (prefer-coding-system 'utf-8-unix)
+(setq inhibit-eol-conversion t)
+(global-auto-revert-mode 1)
 
 ;; Spell-check
 (let ((path-to-aspell (locate-file "aspell"
@@ -61,3 +65,6 @@
 ;; Misc
 (winner-mode t)
 (windmove-default-keybindings)
+(setq org-startup-indented t
+      org-cycle-separator-lines 1)
+(setq dired-listing-switches "-alh")
