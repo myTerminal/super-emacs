@@ -11,6 +11,26 @@
                  " seconds)")
          (get-buffer-create (current-buffer))))
 
+(defun se/install-package-with-quelpa (p)
+  "Installs the supplied package with quelpa, if not already installed"
+  (unless (package-installed-p (car p))
+    (cond ((eq (cadr p) 'melpa) (quelpa (car p)
+                                        :stable (cadddr p)))
+          ((eq (cadr p) 'github) (if (null (cadddr (cdr p)))
+                                     (quelpa `(,(car p)
+                                           :fetcher ,(cadr p)
+                                           :repo ,(caddr p)
+                                           :stable ,(cadddr p)))
+                                   (quelpa `(,(car p)
+                                           :fetcher ,(cadr p)
+                                           :repo ,(caddr p)
+                                           :files ,(cadddr (cdr p))
+                                           :stable ,(cadddr p)))))
+          (t (quelpa `(,(car p)
+                       :fetcher ,(cadr p)
+                       :url ,(caddr p)
+                       :stable ,(cadddr p)))))))
+
 (defun se/reload-current-file ()
   "Reload the file loaded in current buffer from the disk."
   (interactive)
