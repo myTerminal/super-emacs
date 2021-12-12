@@ -21,19 +21,19 @@ An out-of-the-box Emacs configuration with super-powers
 
 ### GitHub
 
-Getting it from GitHub is easier of the two methods. You just need to clone the repository on your local workspace like:
+Getting it from GitHub is the easier of the two methods. You just need to clone the repository on your local workspace like:
 
     git clone https://github.com/myTerminal/super-emacs.git
 
 Then the only next step would be to make sure that [.emacs.d](.emacs.d) is at the root of your home directory.
 
-You can either place it there manually or otherwise create a soft-link from its location to the home directory.
+You can either place it there manually or otherwise create a soft link from its location to the home directory.
 
     ln -s </path/to/cloned/project>/super-emacs/.emacs.d ~/.emacs.d
 
 A clear advantage of the above method would be that you can pull updates from upstream with almost no effort.
 
-Once done, start Emacs to enjoy new super-powers.
+Once done, start Emacs to enjoy new superpowers.
 
 #### XDG support in Emacs 27+
 
@@ -44,7 +44,7 @@ Emacs 27 [comes with XDG support](https://git.savannah.gnu.org/cgit/emacs.git/co
 
 ### Docker Hub
 
-*super-emacs* is also available on Docker. To start it, run a command that looks like:
+*super-emacs* is also available on Docker. To start it, run a command that looks like this:
 
     docker pull myterminal/super-emacs
 
@@ -54,7 +54,7 @@ Emacs 27 [comes with XDG support](https://git.savannah.gnu.org/cgit/emacs.git/co
 
 - Minimal interface with almost everything except the window turned off
 - [overcast-theme](http://github.com/myTerminal/overcast-theme) applied by default, with a readable font-size
-- [MELPA](http://melpa.org) added as a package archive
+- [MELPA](http://melpa.org) added as a package archive and package management using [quelpa](https://github.com/quelpa/quelpa) instead of [package.el](https://github.com/technomancy/package.el) for reliable versioning of packages
 - Easy IDE-like project interaction with [projectile](https://github.com/bbatsov/projectile) and [dumb-jump](https://github.com/jacktasia/dumb-jump)
 - Opinionatedly better file-management with [ranger.el](https://github.com/ralesi/ranger.el)
 - Smooth scrolling with [sublimity](https://github.com/zk-phi/sublimity)
@@ -65,7 +65,7 @@ Emacs 27 [comes with XDG support](https://git.savannah.gnu.org/cgit/emacs.git/co
 - No more welcome screen, Emacs starts up to greet you and shows the date
 - Reload file in a buffer quickly with `<f5>`
 - Statistical computing with [R Markdown](https://rmarkdown.rstudio.com) files through [ESS](https://github.com/emacs-ess/ESS) and [polymode](https://github.com/polymode/polymode)
-- Some more configuration to improve usability
+- Some more configurations to improve the usability
 - Adaptive behavior between graphical and non-graphical mode
 
 ### Pre-configured packages
