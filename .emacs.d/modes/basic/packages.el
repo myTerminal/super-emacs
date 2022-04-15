@@ -2,7 +2,6 @@
   '(;; Text-editing
     (multiple-cursors github "magnars/multiple-cursors.el" t)
     (company github "company-mode/company-mode" t)
-    (undo-tree-0.7.5 url "https://elpa.gnu.org/packages/undo-tree-0.7.5.el" t)
     ;; Navigation
     (dumb-jump github "jacktasia/dumb-jump" t)
     (ace-jump-mode github "winterTTr/ace-jump-mode" t)
@@ -34,9 +33,6 @@
 ;; Start company-mode globally
 (add-hook 'after-init-hook
           'global-company-mode)
-
-;; Start undo-tree
-(global-undo-tree-mode)
 
 ;; Enable dumb-jump
 (dumb-jump-mode)

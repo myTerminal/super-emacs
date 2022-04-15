@@ -18,7 +18,6 @@
                 ("M-<down>" . se/move-line-down)
                 ("M-<up>" . se/move-line-up)
                 ("C-<backspace>" . se/delete-word-backward)
-                ("M-/" . undo-tree-visualize)
                 ("C-s" . swiper)
                 ("<f5>" . se/reload-current-file)
                 ;; Navigation
