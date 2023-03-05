@@ -6,31 +6,25 @@
 [![Join the chat at https://gitter.im/myTerminal/super-emacs](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/myTerminal/super-emacs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)  
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Y8Y5E5GL7)
 
-An out-of-the-box Emacs configuration with super-powers
-
-## An old video demo
-
-[![http://img.youtube.com/vi/mRoGM_-8K9g/0.jpg](http://img.youtube.com/vi/mRoGM_-8K9g/0.jpg)](http://www.youtube.com/watch?v=mRoGM_-8K9g)
+An out-of-the-box Emacs configuration with superpowers.
 
 ## Setup
 
-You just need to clone the repository on your local workspace like:
+Clone this project on your local workspace like:
 
     git clone https://github.com/myTerminal/super-emacs.git
 
-Then the only next step would be to make sure that [.emacs.d](.emacs.d) is at the root of your home directory.
-
-You can either place it there manually or otherwise create a soft link from its location to the home directory.
+Create a soft link to [.emacs.d](.emacs.d) under the user's home directory.
 
     ln -s </path/to/cloned/project>/super-emacs/.emacs.d ~/.emacs.d
 
-A clear advantage of the above method would be that you can pull updates from upstream with almost no effort.
+If your file system does not support soft links for operating systems like Windows, you may create a copy of [.emacs.d](.emacs.d) under your home directory. An obvious problem with this method would be that updates to *super-emacs* would need much more than a `git pull`.
 
-Once done, start Emacs to enjoy new superpowers.
+Once done, start Emacs to enjoy new superpowers. The first startup will take a little while to fetch packages from their respective sources.
 
 #### XDG support in Emacs 27+
 
-Emacs 27 [comes with XDG support](https://git.savannah.gnu.org/cgit/emacs.git/commit/?id=4118297ae2fab4886b20d193ba511a229637aea3) and hence will also work with `~/.config/emacs`. To be able to use *super-emacs* that way (which may as well be the only way soon), you can link it in the following way:
+Emacs 27 [comes with XDG support](https://git.savannah.gnu.org/cgit/emacs.git/commit/?id=4118297ae2fab4886b20d193ba511a229637aea3) and hence will also work with `~/.config/emacs`. To be able to use *super-emacs* that way, you can link it in the following way:
 
     ln -s </path/to/cloned/project>/super-emacs/.emacs.d ~/.config/emacs
 
@@ -85,7 +79,7 @@ Emacs 27 [comes with XDG support](https://git.savannah.gnu.org/cgit/emacs.git/co
     - [meta-presenter](https://github.com/myTerminal/meta-presenter) for presenting slide-shows from within Emacs using markdown files
     - [ESS](https://github.com/emacs-ess/ESS), [polymode](https://github.com/polymode/polymode), [poly-R](https://github.com/polymode/poly-R) and [poly-markdown](https://github.com/polymode/poly-markdown) for statistical computing with [R Markdown](https://rmarkdown.rstudio.com) files.
 
-### Added key-bindings over stock Emacs
+### Added key bindings over stock Emacs
 
 Refer [basic/key-bindings.el](.emacs.d/modes/basic/key-bindings.el) and [standard/key-bindings.el](.emacs.d/modes/standard/key-bindings.el) for all the pre-configured key-bindings for your convenience.
 
@@ -123,12 +117,12 @@ To be able to work with R Markdown files, *super-emacs* comes pre-configured wit
 
 ## Customizing
 
-Not everyone has the same setup and that means that you can (and may) change the configuration files according to your need. However, if you plan to clone this project, use it for your Emacs through a soft-link and pull updates from upstream regularly, there's a high probability that future improvements may end up resulting in merge conflicts on your local workspace. To solve this problem (and according to a suggestion from [@ericllazarus](https://github.com/ericllazarus)), *super-emacs* has been redesigned in a way that it now enables the user to extend their configuration without causing conflicts with future updates. One recommended way of extending *super-emacs* is described below.
+Not everyone has the same setup and that means that you can (and may) change the configuration files according to your need. However, if you plan to clone this project, use it for your Emacs through a soft link, and pull updates from upstream regularly, there's a high probability that future improvements may end up resulting in merge conflicts on your local workspace. To solve this problem (and according to a suggestion from [@ericllazarus](https://github.com/ericllazarus)), *super-emacs* has been redesigned in a way that it now enables the user to extend their configuration without causing conflicts with future updates. One recommended way of extending *super-emacs* is described below.
 
-All configuration files under [.emacs.d/modes/basic](.emacs.d/modes/basic) and [.emacs.d/modes/standard](.emacs.d/modes/standard) can be extended through contents in their neigboring `*-custom.el` file. For example, if you plan to extend the file [basic/packages.el](.emacs.d/modes/basic/packages.el), you can place your personal configuration in the file [basic/packages-custom.el](.emacs.d/modes/basic/packages-custom.el). *super-emacs* will load the files in the right order so that your custom configurations will override the ones from *super-emacs*. This way, whenever there's an update to the original file, there will be no merge conflicts and life would be so much simpler!
+All configuration files under [.emacs.d/modes/basic](.emacs.d/modes/basic) and [.emacs.d/modes/standard](.emacs.d/modes/standard) can be extended through contents in their neighboring `*-custom.el` file. For example, if you plan to extend the file [basic/packages.el](.emacs.d/modes/basic/packages.el), you can place your personal configuration in the file [basic/packages-custom.el](.emacs.d/modes/basic/packages-custom.el). *super-emacs* will load the files in the correct order so that your custom configurations will override the ones from *super-emacs*. This way, whenever there's an update to the original file, there will be no merge conflicts and life would be so much simpler!
 
 ## More
 
-If you're looking for a light-weight setup, try [ample-emacs](https://github.com/myTerminal/ample-emacs).
+If you're looking for a lightweight setup, try [ample-emacs](https://github.com/myTerminal/ample-emacs).
 
 For an even more comprehensive setup, refer to [my personal configs](https://github.com/myTerminal/.emacs.d).
