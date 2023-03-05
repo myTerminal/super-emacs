@@ -9,7 +9,6 @@
 !/.emacs.d/lib.el
 !/.emacs.d/init.el
 
-!/Dockerfile
 !/images
 !/LICENSE
 !/README.md

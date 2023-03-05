@@ -2,9 +2,6 @@
 
 ![Banner](images/banner.png)
 
-[![Docker Automated](https://img.shields.io/docker/automated/myterminal/super-emacs.svg)](https://hub.docker.com/r/myterminal/super-emacs)
-[![Docker Stars](https://img.shields.io/docker/stars/myterminal/super-emacs.svg)](https://hub.docker.com/r/myterminal/super-emacs)
-[![Docker Pulls](https://img.shields.io/docker/pulls/myterminal/super-emacs.svg)](https://hub.docker.com/r/myterminal/super-emacs)  
 [![License](https://img.shields.io/badge/LICENSE-GPL%20v3.0-blue.svg)](https://www.gnu.org/licenses/gpl.html)
 [![Join the chat at https://gitter.im/myTerminal/super-emacs](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/myTerminal/super-emacs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)  
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Y8Y5E5GL7)
@@ -17,11 +14,7 @@ An out-of-the-box Emacs configuration with super-powers
 
 ## Setup
 
-*super-emacs* can be used in two ways.
-
-### GitHub
-
-Getting it from GitHub is the easier of the two methods. You just need to clone the repository on your local workspace like:
+You just need to clone the repository on your local workspace like:
 
     git clone https://github.com/myTerminal/super-emacs.git
 
@@ -40,13 +33,6 @@ Once done, start Emacs to enjoy new superpowers.
 Emacs 27 [comes with XDG support](https://git.savannah.gnu.org/cgit/emacs.git/commit/?id=4118297ae2fab4886b20d193ba511a229637aea3) and hence will also work with `~/.config/emacs`. To be able to use *super-emacs* that way (which may as well be the only way soon), you can link it in the following way:
 
     ln -s </path/to/cloned/project>/super-emacs/.emacs.d ~/.config/emacs
-
-
-### Docker Hub
-
-*super-emacs* is also available on Docker. To start it, run a command that looks like this:
-
-    docker pull myterminal/super-emacs
 
 ## Features
 
