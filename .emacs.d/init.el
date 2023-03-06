@@ -1,27 +1,27 @@
 (require 'cl-lib)
 
 ;; Initialize root
-(defvar se/config-root
+(defvar se2/config-root
   (file-name-directory load-file-name))
 
-(defun se/start ()
+(defun se2/start ()
   "Loads core and then conditionally loads configs."
   (cl-flet* ((start-basic ()
-                          (se/load-file "configs/basic-misc")
-                          (se/load-file "configs/basic-packages")
-                          (se/load-file "configs/basic-key-bindings")
-                          (se/load-file "configs/basic-custom"))
+                          (se2/load-file "configs/basic-misc")
+                          (se2/load-file "configs/basic-packages")
+                          (se2/load-file "configs/basic-key-bindings")
+                          (se2/load-file "configs/basic-custom"))
              (start-standard ()
-                             (se/load-file "configs/standard-misc")
-                             (se/load-file "configs/standard-packages")
-                             (se/load-file "configs/standard-key-bindings")
-                             (se/load-file "configs/standard-custom")))
+                             (se2/load-file "configs/standard-misc")
+                             (se2/load-file "configs/standard-packages")
+                             (se2/load-file "configs/standard-key-bindings")
+                             (se2/load-file "configs/standard-custom")))
     (load (expand-file-name "core"
-			                se/config-root))
+			                se2/config-root))
     (start-basic)
     (if (display-graphic-p)
         (start-standard))
-    (se/print-startup-message)))
+    (se2/print-startup-message)))
 
 ;; Start
-(se/start)
+(se2/start)

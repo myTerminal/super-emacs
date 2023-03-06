@@ -1,4 +1,4 @@
-(defvar se/packages-basic
+(defvar se2/packages-basic
   '(;; Text-editing
     (multiple-cursors github "magnars/multiple-cursors.el" t)
     (company github "company-mode/company-mode" t)
@@ -27,8 +27,8 @@
     (meta-presenter github "myTerminal/meta-presenter" t)
     ))
 
-(mapc 'se/install-package-with-quelpa
-      se/packages-basic)
+(mapc 'se2/install-package-with-quelpa
+      se2/packages-basic)
 
 ;; Start company-mode globally
 (add-hook 'after-init-hook

@@ -1,4 +1,4 @@
-(defvar se/packages-standard
+(defvar se2/packages-standard
   '(;; Text-editing
     (sublimity github "zk-phi/sublimity" t)
     ;; Color themes
@@ -8,8 +8,8 @@
     (powerline github "milkypostman/powerline" t)
     ))
 
-(mapc 'se/install-package-with-quelpa
-      se/packages-standard)
+(mapc 'se2/install-package-with-quelpa
+      se2/packages-standard)
 
 ;; Configure and enable sublimity-mode
 (require 'sublimity-scroll)
