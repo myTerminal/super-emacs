@@ -5,7 +5,6 @@
 !/.emacs.d
 /.emacs.d/*
 !/.emacs.d/configs
-!/.emacs.d/core.el
 !/.emacs.d/lib.el
 !/.emacs.d/init.el
 
