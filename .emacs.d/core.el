@@ -7,13 +7,9 @@
   (file-name-directory load-file-name))
 
 (defun se/load-file (file-path)
-  "Loads the specified file and also it's customized version, if it exists."
+  "Loads the specified file relative to the base-path."
   (load (concat se/base-path
-                file-path))
-  (load (concat se/base-path
-                file-path
-                "-custom")
-        t))
+                file-path)))
 
 ;; Load lib.el
 (se/load-file "lib")
