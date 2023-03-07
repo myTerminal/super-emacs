@@ -8,6 +8,10 @@
 (defvar se2/se-root
   (file-name-directory load-file-name))
 
+;; Determine config root
+(defvar se2/config-root
+  (file-name-directory user-init-file))
+
 (defun se2/load-config (config-name)
   "Loads all the config files for the specified config."
   (mapc 'load (file-expand-wildcards (concat se2/se-root
