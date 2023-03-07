@@ -44,11 +44,11 @@
 
 ;; Package archives and 'customize'
 (setq custom-file
-      (concat se2/config-root
+      (concat se2/se-root
               "custom.el"))
 (require 'package)
 (setq package-user-dir
-      (concat se2/config-root
+      (concat se2/se-root
               "elpa"))
 (setq package--init-file-ensured
       t)
