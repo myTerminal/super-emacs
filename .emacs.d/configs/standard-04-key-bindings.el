@@ -1,5 +1,5 @@
 (se2/bind-keys '(
-                ;; Misc
-                ("C-)" . theme-looper-enable-next-theme)
-                ("C-(" . theme-looper-enable-previous-theme))
-              global-map)
+                 ;; Misc
+                 ("C-c )" . theme-looper-enable-next-theme)
+                 ("C-c (" . theme-looper-enable-previous-theme))
+               global-map)
