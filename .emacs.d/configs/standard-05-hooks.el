@@ -1,15 +1,10 @@
-;; Interface
-(setq frame-title-format
-      "%b - super-emacs")
-(setq use-dialog-box
-      nil)
-(tool-bar-mode 0)
-(scroll-bar-mode 0)
-(setq visible-bell
-      t)
-(custom-set-faces
- '(default ((t (:height 120)))))
-(setq org-pretty-entities t
-      org-hide-emphasis-markers t
-      org-startup-with-inline-images t
-      org-image-actual-width '(640))
+(add-hook 'prog-mode-hook
+          'fira-code-mode)
+
+(add-hook 'text-mode-hook
+          (lambda () (setq line-spacing 10)))
+
+(add-hook 'prog-mode-hook
+          (lambda ()
+            (setq buffer-face-mode-face `(:family ,se2/variable/font-family-for-programming))
+            (buffer-face-mode)))
