@@ -113,22 +113,7 @@
 
 (defun se2/get-configured-irc-connections ()
   "Returns a collection of configured IRC connections in form of a hashmap."
-  #s(hash-table
-     size 3
-     test equal
-     data (
-           "LiberaChat" (lambda (password)
-                          (erc-tls :server "irc.libera.chat"
-                                   :port 6697
-                                   :nick "myTerminal"
-                                   :full-name "Mohammed Ismail Ansari"
-                                   :password password))
-           "Freenode" (lambda (password)
-                        (erc-tls :server "irc.freenode.net"
-                                 :port 6697
-                                 :nick "myTerminal"
-                                 :full-name "Mohammed Ismail Ansari"
-                                 :password password)))))
+  se2/variable/configured-irc-connections)
 
 (defun se2/prompt-to-connect-to-irc ()
   "Prompts with a list of ERC connections and then connects to the chosen one."
