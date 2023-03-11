@@ -101,16 +101,11 @@
                                  (message "File reloaded")))
         (t (message "You're not editing a file!"))))
 
-(defun se2/ask-for-password (password)
-  "Prompts user for a password."
-  (interactive "sEnter the password: ")
-  password)
-
 (defun se2/prompt-to-connect-to-irc ()
   "Prompts with a list of ERC connections and then connects to the chosen one."
   (interactive)
   (cl-flet* ((se2/connect-to-irc (connection)
-                                 (let ((password (call-interactively 'se2/ask-for-password)))
+                                 (let ((password (read-passwd "Enter password: ")))
                                    (funcall connection password))))
     (if (featurep 'ivy)
         (let* ((ivy-wrap t))
