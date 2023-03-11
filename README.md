@@ -48,7 +48,9 @@ To be able to work with R Markdown files, *super-emacs* comes pre-configured wit
 
 ## Customizing
 
-The recommended way to customize *super-emacs* is to place your custom configuration scripts under [.emacs.d/configs/basic-custom.el](.emacs.d/configs/basic-custom.el) and [.emacs.d/configs/standard-custom.el](.emacs.d/configs/standard-custom.el) for text and graphical modes respectively. Configuration files will be loaded in the correct order so that your custom configuration will override the ones from *super-emacs*. This way, whenever there's an update to the original file, there will be no merge conflicts and life would be so much simpler!
+The recommended way to customize *super-emacs* is to place your custom configuration scripts under [.emacs.d/configs/basic-custom.el]() and [.emacs.d/configs/standard-custom.el]() for text and graphical modes respectively. Configuration files will be loaded in the correct order so that your custom configuration will override the ones from *super-emacs*. This way, whenever there's an update to the original file, there will be no merge conflicts and life would be so much simpler!
+
+There are also variables in [.emacs.d/configs/variables.el]() that you can customize to alter certain things in *super-emacs*.
 
 ## More
 
