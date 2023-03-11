@@ -106,28 +106,22 @@
   (interactive "sEnter the password: ")
   password)
 
-(defun se2/connect-to-irc (connection)
-  "Connects to the supplied IRC server using an entered password."
-  (let ((password (call-interactively 'se2/ask-for-password)))
-    (funcall connection password)))
-
-(defun se2/get-configured-irc-connections ()
-  "Returns a collection of configured IRC connections in form of a hashmap."
-  se2/variable/configured-irc-connections)
-
 (defun se2/prompt-to-connect-to-irc ()
   "Prompts with a list of ERC connections and then connects to the chosen one."
   (interactive)
-  (if (featurep 'ivy)
-      (let* ((ivy-wrap t)
-             (connections (se2/get-configured-irc-connections)))
-        (ivy-read "Choose an IRC server: "
-                  (hash-table-keys connections)
-                  :action (lambda (server)
-                            (let ((connection (gethash server connections)))
-                              (if connection
-                                  (se2/connect-to-irc connection)
-                                (message "Please specify a valid server!"))))))))
+  (cl-flet* ((se2/connect-to-irc (connection)
+                                 (let ((password (call-interactively 'se2/ask-for-password)))
+                                   (funcall connection password))))
+    (if (featurep 'ivy)
+        (let* ((ivy-wrap t))
+          (ivy-read "Choose an IRC server: "
+                    (hash-table-keys se2/variable/configured-irc-connections)
+                    :action (lambda (server)
+                              (let ((connection (gethash server
+                                                         se2/variable/configured-irc-connections)))
+                                (if connection
+                                    (se2/connect-to-irc connection)
+                                  (message "Please specify a valid server!")))))))))
 
 ;; Credit: https://github.com/jonathanj
 (defun se2/window-toggle-split-direction ()
