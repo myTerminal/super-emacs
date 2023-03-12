@@ -8,7 +8,9 @@
 (defun se2/show-welcome-screen ()
   "Prints welcome message and more to the current buffer."
   (cl-flet* ((get-ellapsed-time ()
-                                (number-to-string (cadr (time-subtract (current-time) se2/invokation-time))))
+                                (propertize (number-to-string (cadr (time-subtract (current-time)
+                                                                                   se2/invokation-time)))
+                                            'face '(:slant italic)))
              (get-formatted-time ()
                                  (format-time-string "%B %d, %Y"))
              (get-operating-system ()
@@ -17,6 +19,8 @@
                                     ((string-equal system-type "darwin") "Mac OS X")
                                     ((string-equal system-type "gnu/linux") "Linux")
                                     (t "Unknown")))
+             (get-bold-text (text)
+                            (propertize text 'face '(:weight bold)))
              (set-key-bindings ()
                                (local-set-key (kbd "q")
                                               (lambda ()
@@ -24,18 +28,17 @@
                                                 (kill-buffer (get-buffer-create " *Welcome*"))))))
     (with-current-buffer (get-buffer-create " *Welcome*")
       (set-window-buffer (get-buffer-window) (current-buffer))
-      (insert (concat (propertize "super-emacs" 'face '(:height 2.0)) "\n"
+      (insert (concat (propertize "super-emacs" 'face '(:height 2.0 :weight bold)) "\n"
                       "(Started in " (get-ellapsed-time) " seconds)" "\n"
                       "\n"
-                      "Today is " (get-formatted-time) "\n"
+                      "Today is " (get-bold-text (get-formatted-time)) "\n"
                       "\n"
-                      "Emacs version: " emacs-version "\n"
-                      "Logged in as: " user-login-name "\n"
-                      "Host: " system-name " (" (get-operating-system) ")" "\n"
-                      "Init file: " user-init-file "\n"
+                      "Emacs version: " (get-bold-text emacs-version) "\n"
+                      "Logged in as: " (get-bold-text user-login-name) "\n"
+                      "Host: " (get-bold-text system-name) " (" (get-bold-text (get-operating-system)) ")" "\n"
+                      "Init file: " (get-bold-text user-init-file) "\n"
                       "\n"
-                      "[q] to dismiss"
-                      ))
+                      (get-bold-text "[q]") " to dismiss"))
       (set-key-bindings))))
 
 (defun se2/install-package-with-quelpa (p)
