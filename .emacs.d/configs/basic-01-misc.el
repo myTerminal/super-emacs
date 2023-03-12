@@ -16,8 +16,10 @@
       nil)
 
 ;; Startup
-(setq initial-buffer-choice
+(setq inhibit-startup-screen
       t)
+(setq initial-buffer-choice
+      nil)
 (setq initial-scratch-message
       "")
 

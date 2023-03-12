@@ -29,7 +29,7 @@
   (se2/load-config "basic")
   (if (display-graphic-p)
       (se2/load-config "standard"))
-  (se2/print-startup-message))
+  (se2/show-welcome-screen))
 
 ;; Start
 (se2/start)

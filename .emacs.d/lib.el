@@ -1,15 +1,42 @@
-(defun se2/print-startup-message ()
-  "Prints welcome message to the current buffer."
-  (princ (concat "Welcome to super-emacs!"
-                 "\n\n"
-                 "Today is "
-                 (format-time-string "%B %d %Y")
-                 "\n\n"
-                 "(Started in "
-                 (number-to-string (cadr (time-subtract (current-time)
-                                                        se2/invokation-time)))
-                 " seconds)")
-         (get-buffer-create (current-buffer))))
+(define-derived-mode super-emacs-welcome-mode
+  special-mode
+  "super-emacs"
+  :abbrev-table nil
+  :syntax-table nil
+  (setq cursor-type nil))
+
+(defun se2/show-welcome-screen ()
+  "Prints welcome message and more to the current buffer."
+  (cl-flet* ((get-ellapsed-time ()
+                                (number-to-string (cadr (time-subtract (current-time) se2/invokation-time))))
+             (get-formatted-time ()
+                                 (format-time-string "%B %d, %Y"))
+             (get-operating-system ()
+                                   (cond
+                                    ((string-equal system-type "windows-nt") "Microsoft Windows")
+                                    ((string-equal system-type "darwin") "Mac OS X")
+                                    ((string-equal system-type "gnu/linux") "Linux")
+                                    (t "Unknown")))
+             (set-key-bindings ()
+                               (local-set-key (kbd "q")
+                                              (lambda ()
+                                                (interactive)
+                                                (kill-buffer (get-buffer-create " *Welcome*"))))))
+    (with-current-buffer (get-buffer-create " *Welcome*")
+      (set-window-buffer (get-buffer-window) (current-buffer))
+      (insert (concat (propertize "super-emacs" 'face '(:height 2.0)) "\n"
+                      "(Started in " (get-ellapsed-time) " seconds)" "\n"
+                      "\n"
+                      "Today is " (get-formatted-time) "\n"
+                      "\n"
+                      "Emacs version: " emacs-version "\n"
+                      "Logged in as: " user-login-name "\n"
+                      "Host: " system-name " (" (get-operating-system) ")" "\n"
+                      "Init file: " user-init-file "\n"
+                      "\n"
+                      "[q] to dismiss"
+                      ))
+      (set-key-bindings))))
 
 (defun se2/install-package-with-quelpa (p)
   "Installs the supplied package with quelpa, if not already installed"
