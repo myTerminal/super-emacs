@@ -112,10 +112,8 @@
 (which-key-mode)
 
 (ivy-mode 1)
-(setq ivy-use-virtual-buffers
-      t)
-(setq projectile-completion-system
-      'ivy)
+(setq ivy-use-virtual-buffers t
+      projectile-completion-system 'ivy)
 (counsel-projectile-mode)
 
 (dim-minor-names '((undo-tree-mode nil undo-tree)
