@@ -27,6 +27,7 @@
     (rust-mode github "rust-lang/rust-mode" t)
     (csharp-mode github "emacs-csharp/csharp-mode" t)
     ;; Programming tools
+    (eglot github "joaotavora/eglot" t)
     (slime github "slime/slime" t ("*"))
     (projectile github "bbatsov/projectile" t)
     (counsel-projectile github "ericdanan/counsel-projectile" t)
