@@ -39,6 +39,7 @@
                       "Init file: " (get-bold-text user-init-file) "\n"
                       "\n"
                       (get-bold-text "[q]") " to dismiss"))
+      (super-emacs-welcome-mode)
       (set-key-bindings))))
 
 (defun se2/install-package-with-quelpa (p)
