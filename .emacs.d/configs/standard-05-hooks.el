@@ -1,8 +1,23 @@
+(add-hook 'dired-mode-hook
+          'diff-hl-dired-mode)
+
 (add-hook 'prog-mode-hook
           'fira-code-mode)
+(add-hook 'prog-mode-hook
+          'diff-hl-margin-mode)
+(add-hook 'prog-mode-hook
+          'diff-hl-flydiff-mode)
+(add-hook 'prog-mode-hook
+          'diff-hl-show-hunk-mouse-mode)
 
 (add-hook 'text-mode-hook
           (lambda () (setq line-spacing 10)))
+(add-hook 'text-mode-hook
+          'diff-hl-margin-mode)
+(add-hook 'text-mode-hook
+          'diff-hl-flydiff-mode)
+(add-hook 'text-mode-hook
+          'diff-hl-show-hunk-mouse-mode)
 
 (add-hook 'prog-mode-hook
           (lambda ()
