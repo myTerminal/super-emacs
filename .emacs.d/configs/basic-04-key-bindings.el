@@ -10,11 +10,10 @@ _SPC_ outer-spaces:  %`outer-spaces-mode
   ("SPC" outer-spaces-mode nil)
   ("q" nil "Cancel"))
 
-(defhydra se2/hydra-misc (:color blue)
+(defhydra se2/hydra-tools (:color blue)
   "Misc"
   ("z" se2/set-zoning "Enable zoning")
   ("x" zone-leave-me-alone "Disable zoning")
-  ("r" window-shaper-mode "Resize windows")
   ("." ztree-dir "ztree")
   ("/" term "Terminal")
   ("i" se2/prompt-to-connect-to-irc "Connect to IRC")
@@ -47,17 +46,18 @@ _SPC_ outer-spaces:  %`outer-spaces-mode
   ("S-<down>" buf-move-down "Move down")
   ("S-<left>" buf-move-left "Move left")
   ("S-<right>" buf-move-right "Move right")
-  ;; Arranging
-  ("+" se2/window-toggle-split-direction "Horizontal<>Vertical")
   ;; Jumping
   ("\\" ace-window "Jump to window" :color blue)
+  ;; Arranging
+  ("r" window-shaper-mode "Resize windows")
+  ("+" se2/window-toggle-split-direction "Horizontal<>Vertical")
   ;; Misc
   ("q" nil "Cancel"))
 
 ;;; Key-chords
 
 (key-chord-define-global "~~" 'se2/hydra-toggles/body)
-(key-chord-define-global "[[" 'se2/hydra-misc/body)
+(key-chord-define-global "[[" 'se2/hydra-tools/body)
 (key-chord-define-global "]]" 'se2/hydra-editing/body)
 (key-chord-define-global "\\\\" 'se2/hydra-windows/body)
 
