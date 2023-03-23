@@ -68,7 +68,6 @@
 
 ;; Misc
 (winner-mode t)
-(windmove-default-keybindings)
 (require 'zone)
 (setq zone-programs [zone-pgm-quotes]
       org-todo-keywords '((sequence "DEFERRED(r)" "TODO(t)" "BLOCKED(b)" "IN-PROGRESS(p)" "|"
