@@ -38,7 +38,14 @@ Emacs 27 [comes with XDG support](https://git.savannah.gnu.org/cgit/emacs.git/co
 
 ## Optional external dependencies
 
-###  [aspell](http://aspell.net) for spell-check
+### Fonts
+
+The below two fonts have been configured by default:
+
+1. [Liberation Mono](https://www.fontsquirrel.com/fonts/liberation-mono) for text modes
+2. [Fira Code](https://github.com/tonsky/FiraCode) for programming modes
+
+### [aspell](http://aspell.net) for spell-check
 
 For spell-check, you need to have aspell installed on the system for it to work with `ispell`. Refer to [the official site](http://aspell.net) for instructions on how to install it on your operating system.
 
