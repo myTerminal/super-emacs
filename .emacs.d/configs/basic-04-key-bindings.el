@@ -108,8 +108,8 @@ _SPC_ outer-spaces:  %`outer-spaces-mode
                dired-mode-map)
 
 (se2/bind-keys '(
-                ;; quickrun
-                ("C-c e" . quickrun)
-                ("C-c r" . quickrun-region)
-                ("C-c t" . quickrun-replace-region))
-              prog-mode-map)
+                 ;; quickrun
+                 ("C-c e" . quickrun)
+                 ("C-c r" . quickrun-region)
+                 ("C-c t" . quickrun-replace-region))
+               prog-mode-map)
