@@ -56,7 +56,7 @@ _SPC_ outer-spaces:  %`outer-spaces-mode
 
 ;;; Key-chords
 
-(key-chord-define-global "``" 'se2/hydra-toggles/body)
+(key-chord-define-global "~~" 'se2/hydra-toggles/body)
 (key-chord-define-global "[[" 'se2/hydra-misc/body)
 (key-chord-define-global "]]" 'se2/hydra-editing/body)
 (key-chord-define-global "\\\\" 'se2/hydra-windows/body)
