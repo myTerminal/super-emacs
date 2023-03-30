@@ -4,10 +4,12 @@
   "
 _l_ line-numbers:  %`display-line-numbers-mode
 _SPC_ outer-spaces:  %`outer-spaces-mode
+_w_ word-wrap:  %`visual-line-mode
 
 "
   ("l" display-line-numbers-mode nil)
   ("SPC" outer-spaces-mode nil)
+  ("w" visual-line-mode nil)
   ("q" nil "Cancel"))
 
 (defhydra se2/hydra-tools (:color blue)
