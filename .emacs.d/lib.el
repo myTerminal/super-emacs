@@ -177,6 +177,13 @@
                 (set-window-buffer (windmove-find-other-window neighbour-dir)
                                    other-buf))))))))
 
+(defun se2/toggle-super-kill ()
+  "Toggles whether or not to kill the carriage return at the end of the line
+when killing a line."
+  (interactive)
+  (setq kill-whole-line
+        (not kill-whole-line)))
+
 (defun se2/toggle-line-spacing ()
   "Toggles line-spacing between 0 and 10."
   (interactive)
