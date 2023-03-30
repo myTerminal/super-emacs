@@ -10,6 +10,18 @@ An out-of-the-box Emacs configuration with superpowers.
 
 ## Setup
 
+### Automatic setup (does not work for Windows)
+
+Simply execute the following command in a terminal:
+
+    /bin/bash -c "$(curl https://raw.githubusercontent.com/myTerminal/super-emacs/v2.0.0/setup)"
+
+If everything goes as planned, the next time you start Emacs, *super-emacs* will be automatically configured.
+
+> **For macOS:** The shell needs to be changed from Zsh to Bash and there needs to be a `sudo xcode-select --install` before anything else.
+
+### Manual setup
+
 Clone this project on your local workspace like:
 
     git clone https://github.com/myTerminal/super-emacs.git
