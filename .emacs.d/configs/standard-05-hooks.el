@@ -11,8 +11,6 @@
           'diff-hl-show-hunk-mouse-mode)
 
 (add-hook 'text-mode-hook
-          (lambda () (setq line-spacing 10)))
-(add-hook 'text-mode-hook
           'diff-hl-margin-mode)
 (add-hook 'text-mode-hook
           'diff-hl-flydiff-mode)

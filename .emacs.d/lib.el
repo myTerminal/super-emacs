@@ -176,3 +176,10 @@
                   (split-window-horizontally))
                 (set-window-buffer (windmove-find-other-window neighbour-dir)
                                    other-buf))))))))
+
+(defun se2/toggle-line-spacing ()
+  "Toggles line-spacing between 0 and 10."
+  (interactive)
+  (if line-spacing
+      (setq line-spacing nil)
+    (setq line-spacing 10)))
