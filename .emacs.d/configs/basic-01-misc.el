@@ -31,8 +31,7 @@
              'hbar)
 (delete-selection-mode 1)
 (prefer-coding-system 'utf-8-unix)
-(setq inhibit-eol-conversion t
-      kill-whole-line t)
+(setq inhibit-eol-conversion t)
 (global-auto-revert-mode 1)
 
 ;; Spell-check
