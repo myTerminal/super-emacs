@@ -12,8 +12,9 @@
       org-startup-with-inline-images t
       org-image-actual-width '(640))
 
-(add-to-list 'default-frame-alist
-             `(font . ,se2/variable/font-default))
+(set-face-attribute 'default nil
+                    :font se2/variable/font-default-family
+                    :height se2/variable/font-default-height)
 
 (set-frame-size (selected-frame)
                 (car se2/variable/frame-dimensions)
