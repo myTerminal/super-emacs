@@ -12,9 +12,10 @@
       org-startup-with-inline-images t
       org-image-actual-width '(640))
 
-(set-face-attribute 'default nil
-                    :font se2/variable/font-default-family
-                    :height se2/variable/font-default-height)
+(if (find-font (font-spec :name se2/variable/font-default-family))
+    (set-face-attribute 'default nil
+                        :font se2/variable/font-default-family
+                        :height se2/variable/font-default-height))
 
 (set-frame-size (selected-frame)
                 (car se2/variable/frame-dimensions)
