@@ -4,7 +4,7 @@
 (defvar se2/variable/font-default-family
   "Liberation Mono")
 (defvar se2/variable/font-default-height
-  200)
+  150)
 (defvar se2/variable/font-family-for-programming
   "Fira Code")
 
