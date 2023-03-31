@@ -1,0 +1,88 @@
+#+TITLE: super-emacs
+
+*super-emacs* is an out-of-the-box Emacs configuration with *superpowers*.
+
+* Overview
+
+(coming soon...)
+
+* Setting up
+
+Using *super-emacs* as your Emacs config involves just a little more than linking the provided [[../.emacs.d][.emacs.d]] directory to your local filesystem and it can be done either using the automatic setup or doing it manually. 
+
+** Automatic setup (does not work for Windows)
+
+Simply execute the following command in a terminal:
+
+#+NAME: command_install_automatic
+#+BEGIN_SRC bash
+  /bin/bash -c "$(curl https://raw.githubusercontent.com/myTerminal/super-emacs/v2.0.0/setup)"
+#+END_SRC
+
+If everything goes as planned, the next time you start Emacs, *super-emacs* will be automatically configured.
+
+_PS:_ For macOS, the shell needs to be changed from Zsh to Bash and there needs to be a ~sudo xcode-select --install~ before anything else.
+
+** Manual setup
+
+Clone this project on your local workspace like:
+
+#+NAME: command_install_manual_1
+#+BEGIN_SRC bash
+  git clone https://github.com/myTerminal/super-emacs.git
+#+END_SRC
+
+Create a soft link to [[../.emacs.d][.emacs.d]] under the user's home directory.
+
+#+NAME: command_install_manual_2
+#+BEGIN_SRC bash
+  ln -s </path/to/cloned/project>/super-emacs/.emacs.d ~/.emacs.d
+#+END_SRC
+
+If your file system does not support soft links for operating systems like Windows, you may create a copy of [[../.emacs.d][.emacs.d]] under your home directory. An obvious problem with this method would be that updates to *super-emacs* would need much more than a ~git pull~.
+
+Once done, start Emacs to enjoy new superpowers. The first startup will take a little while to fetch packages from their respective sources.
+
+*** XDG support in Emacs 27+
+
+Emacs 27 [[https://git.savannah.gnu.org/cgit/emacs.git/commit/?id=4118297ae2fab4886b20d193ba511a229637aea3][comes with XDG support]] and hence will also work with ~~/.config/emacs~. To be able to use *super-emacs* that way, you can link it in the following way:
+
+#+NAME: command_install_manual_3
+#+BEGIN_SRC bash
+  ln -s </path/to/cloned/project>/super-emacs/.emacs.d ~/.config/emacs
+#+END_SRC
+
+* Optional external dependencies
+
+** Fonts
+
+The below two fonts have been configured by default:
+
+1. [[https://www.fontsquirrel.com/fonts/liberation-mono][Liberation Mono]] for text modes
+2. [[https://github.com/tonsky/FiraCode][Fira Code]] for programming modes
+
+** [[http://aspell.net][aspell]]
+
+For spell-check, you need to have aspell installed on the system for it to work with ~ispell~. Refer to [[http://aspell.net][the official site]] for instructions on how to install it on your operating system.
+
+** [[https://www.r-project.org][R]]
+
+To be able to work with R Markdown files, *super-emacs* comes pre-configured with all the required packages except for an external dependency on [[https://www.r-project.org][R]] which needs to be installed on the system.
+
+* Features
+
+(coming soon...)
+
+* Customizing
+
+The recommended way to customize *super-emacs* is to place your custom configuration scripts under [[../.emacs.d/configs/basic-custom.el]] and [[../.emacs.d/configs/standard-custom.el]] for text and graphical modes respectively. Configuration files will be loaded in the correct order so that your custom configuration will override the ones from *super-emacs*. This way, whenever there's an update to the original file, there will be no merge conflicts and life would be so much simpler!
+
+There are also variables in [[./..emacs.d/configs/variables.el]] that you can customize to alter certain things in *super-emacs*.
+
+* FAQs
+
+(coming soon...)
+
+# Local Variables:
+# eval: (visual-line-mode 1)
+# End:
