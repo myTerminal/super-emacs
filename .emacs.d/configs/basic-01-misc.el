@@ -24,7 +24,7 @@
 ;; Text editing
 (column-number-mode)
 (show-paren-mode)
-(global-hl-line-mode -1)
+(global-hl-line-mode)
 (setq-default indent-tabs-mode nil
               tab-width 4)
 (set-default 'cursor-type
