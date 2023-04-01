@@ -55,7 +55,7 @@ _s_ line-spacing:  %`line-spacing
   ;; Jumping
   ("\\" ace-window "Jump to window" :color blue)
   ;; Arranging
-  ("r" window-shaper-mode "Resize windows")
+  ("r" window-shaper-mode "Resize windows" :color blue)
   ("+" se2/window-toggle-split-direction "Horizontal<>Vertical")
   ;; Misc
   ("q" nil "Cancel"))
