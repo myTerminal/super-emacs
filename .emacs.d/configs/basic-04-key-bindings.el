@@ -17,7 +17,7 @@ _s_ line-spacing:  %`line-spacing
   ("q" nil "Cancel"))
 
 (defhydra se2/hydra-tools (:color blue)
-  "Misc"
+  "Tools"
   ("z" se2/set-zoning "Enable zoning")
   ("x" zone-leave-me-alone "Disable zoning")
   ("." ztree-dir "ztree")
@@ -26,7 +26,7 @@ _s_ line-spacing:  %`line-spacing
   ("q" nil "Cancel"))
 
 (defhydra se2/hydra-editing (:color blue)
-  "Text"
+  "Editing"
   ;; Programming
   ("'" dumb-jump-go "Go to definition")
   ("\"" dumb-jump-back "Back from definition")
