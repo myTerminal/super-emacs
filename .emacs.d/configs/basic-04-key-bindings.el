@@ -119,3 +119,14 @@ _s_ line-spacing:  %`line-spacing
                  ("C-c r" . quickrun-region)
                  ("C-c t" . quickrun-replace-region))
                prog-mode-map)
+
+;;; Augmentations to company-mode
+(define-key company-active-map
+  (kdb "RET")
+  'company-abort)
+(define-key company-active-map
+  [return]
+  'company-abort)
+(define-key company-active-map
+  (kbd "<right>")
+  'company-complete-selection)
