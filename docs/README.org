@@ -1,0 +1,758 @@
+#+TITLE: super-emacs
+
+*super-emacs* is an out-of-the-box Emacs configuration with *superpowers*.
+
+* Overview
+
+(coming soon...)
+
+* Setting up
+
+Using *super-emacs* as your Emacs config involves just a little more than linking the provided [[../.emacs.d][.emacs.d]] directory to your local filesystem and it can be done either using the automatic setup or doing it manually. 
+
+** Automatic setup (does not work for Windows)
+
+Simply execute the following command in a terminal:
+
+#+NAME: command_install_automatic
+#+BEGIN_SRC bash
+  /bin/bash -c "$(curl https://raw.githubusercontent.com/myTerminal/super-emacs/master/setup)"
+#+END_SRC
+
+If everything goes as planned, the next time you start Emacs, *super-emacs* will be automatically configured.
+
+_PS:_ For macOS, the shell needs to be changed from Zsh to Bash and there needs to be a ~sudo xcode-select --install~ before anything else.
+
+** Manual setup
+
+Clone this project on your local workspace like:
+
+#+NAME: command_install_manual_1
+#+BEGIN_SRC bash
+  git clone https://github.com/myTerminal/super-emacs.git
+#+END_SRC
+
+Create a soft link to [[../.emacs.d][.emacs.d]] under the user's home directory.
+
+#+NAME: command_install_manual_2
+#+BEGIN_SRC bash
+  ln -s </path/to/cloned/project>/super-emacs/.emacs.d ~/.emacs.d
+#+END_SRC
+
+If your file system does not support soft links for operating systems like Windows, you may create a copy of [[../.emacs.d][.emacs.d]] under your home directory. An obvious problem with this method would be that updates to *super-emacs* would need much more than a ~git pull~.
+
+Once done, start Emacs to enjoy new superpowers. The first startup will take a little while to fetch packages from their respective sources.
+
+*** XDG support in Emacs 27+
+
+Emacs 27 [[https://git.savannah.gnu.org/cgit/emacs.git/commit/?id=4118297ae2fab4886b20d193ba511a229637aea3][comes with XDG support]] and hence will also work with ~~/.config/emacs~. To be able to use *super-emacs* that way, you can link it in the following way:
+
+#+NAME: command_install_manual_3
+#+BEGIN_SRC bash
+  ln -s </path/to/cloned/project>/super-emacs/.emacs.d ~/.config/emacs
+#+END_SRC
+
+* Optional external dependencies
+
+** Fonts
+
+The below two fonts have been configured by default:
+
+1. [[https://www.fontsquirrel.com/fonts/liberation-mono][Liberation Mono]] for text modes
+2. [[https://github.com/tonsky/FiraCode][Fira Code]] for programming modes
+
+** [[http://aspell.net][aspell]]
+
+For spell-check, you need to have ~aspell~ installed on the system for it to work with ~ispell~. Refer to [[http://aspell.net][the official site]] for instructions on how to install it on your operating system.
+
+** [[https://www.r-project.org][R]]
+
+To be able to work with R Markdown files, *super-emacs* comes pre-configured with all the required packages except for an external dependency on [[https://www.r-project.org][R]] which needs to be installed on the system.
+
+* Features
+
+** Interface
+
+*** Cleaner frames
+
+*super-emacs* provides the user with a cleaner interface which is most noticeable when running Emacs in a graphical environment where elements like the menubar, the toolbar, and the scrollbar are hidden from sight to provide more space to work with what's more important: the text. This barely loses any functionality as most of it is still accessible from within Emacs through other alternate means.
+
+*** No dialogues
+
+When running inside a graphical environment, especially when using the mouse to navigate around, Emacs often uses graphical dialog boxes for prompts and confirmations. *super-emacs* has this behavior disabled and all user interaction happens through the keyboard.
+
+*** Color themes
+
+*super-emacs* comes with a set of five color themes consisting of light, dark and monochromatic colors. There's also *theme-looper* that can help you switch through those themes with the following set of key bindings:
+
+#+BEGIN_QUOTE
+Packages used: [[https://github.com/myTerminal/theme-looper][theme-looper]], [[https://github.com/cpaulik/emacs-material-theme][material-theme]], [[https://github.com/andrzejsliwa/hemisu-theme][hemisu-theme]], [[https://github.com/aalpern/emacs-color-theme-green-phosphor][green-phosphor]], [[https://github.com/myTerminal/overcast-theme][overcast-theme]]
+#+END_QUOTE
+
+|-------+--------------------------------------------|
+| Keys  | Action                                     |
+|-------+--------------------------------------------|
+| C-c ( | Switches to the previous theme in the list |
+| C-c ) | Switches to the next theme in the list     |
+|-------+--------------------------------------------|
+
+*** Completion system
+
+Whether you're finding a file, switching between buffers or executing a command from the minibuffer, *super-emacs* has you covered with a smart completion system that prompts you with a list of possible candidates filtered as you type. This is implemented using a suite of three utilities: *ivy*, *counsel* and *swiper*.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/abo-abo/swiper][counsel]]
+#+END_QUOTE
+
+*** Modeline
+
+The default modeline in Emacs is replaced with a custom (and arguably more functional) modeline using a package named *telephone-line*. It attempts to display as much information as possible while hiding status symbols for most minor modes.
+
+This modeline is not available when Emacs is not run inside a graphical environment.
+
+#+BEGIN_QUOTE
+Packages used: [[https://github.com/dbordak/telephone-line][telephone-line]], [[https://github.com/alezost/dim.el][dim]]
+#+END_QUOTE
+
+*** Nested key-bindings
+
+In order to keep key bindings easier to access and remember, they have been organized into four groups. The keys corresponding to the groups have to be pressed twice quickly in order to bring up the respective menus.
+
+#+BEGIN_QUOTE
+Packages used: [[https://github.com/abo-abo/hydra][hydra]], [[https://github.com/emacsorphanage/key-chord][key-chord]]
+#+END_QUOTE
+
+|------+--------------------------|
+| Keys | Action                   |
+|------+--------------------------|
+| ~~   | Toggles menu             |
+| [[   | Tools menu               |
+| ]]   | Editing menu             |
+| \\   | Buffers and Windows menu |
+|------+--------------------------|
+
+*** Quick toggles
+
+There is a set of quick toggles available at the quick double-press.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/emacsorphanage/key-chord][key-chord]]
+#+END_QUOTE
+
+From the toggles menu:
+|------+------------------------------------------------------------------|
+| Keys | Action                                                           |
+|------+------------------------------------------------------------------|
+| l    | Toggles line numbers in the current buffer                       |
+| w    | Toggles word-wrap in the current buffer                          |
+| k    | Toggles whether to kill line-endings when killing lines with ~C-k~ |
+| s    | Toggles extra line-spacing in the current buffer                 |
+|------+------------------------------------------------------------------|
+
+*** Help with key-bindings
+
+Pausing in-between executing commands shows contextual help in the minibuffer for all possible next keystrokes that can be used at that time alongside their associated commands.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/justbur/emacs-which-key][which-key]]
+#+END_QUOTE
+
+*** Zoning
+
+Calling the function ~zone-quotes-set-quotes~ and passing it a list of quotes displays a random quote one at a time while zoning. You can activate or deactivate zoning with the mentioned key bindings:
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/myTerminal/zone-quotes][zone-quotes]]
+#+END_QUOTE
+
+From the tools menu:
+|------+-----------------------------------------------|
+| Keys | Action                                        |
+|------+-----------------------------------------------|
+| x    | Disables zoning                               |
+| z    | Enables zoning                                |
+|------+-----------------------------------------------|
+
+** Text-editing
+
+*** Fonts
+
+Fonts for text and programming modes are different, more specifically Liberation Mono and Fira Code. Liberation Mono is easier to read regular text, while Fira code provides a few unique features that can be really helpful while writing and especially reading programs. One of the biggest of them is programming ligatures that combine two or more characters into a single symbol that is more easily identifiable in between other text.
+
+These fonts are also configurable using the file [[../.emacs.d/configs/variables.el][variables.el]].
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/jming422/fira-code-mode][fira-code]]
+#+END_QUOTE
+
+*** Column numbers
+
+Just as the line number for the cursor position is displayed on the modeline, column numbers are displayed too. While editing files that follow a strict column limit, ~column-enforce-mode~ can be used.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/jordonbiondo/column-enforce-mode][column-enforce-mode]]
+#+END_QUOTE
+
+*** Matching parentheses
+
+While typing text, all kinds of brackets (~(~, ~[~, and ~{~) and quotes (~'~, ~"~, and ~`~) are automatically closed. This is implemented using *electric-pairs* which is included with Emacs since the recent versions.
+
+Visual feedback is also while stepping on balanced and unbalanced brackets.
+
+*** Indenting with tabs
+
+Text indentation is only performed with spaces instead of tabs, and each indent is made up of four spaces.
+
+*** White spaces
+
+Leading and trailing white spaces can be highlighted in a buffer using ~outer-spaces-mode~. It is available under the toggles menu.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/myTerminal/outer-spaces][outer-spaces]]
+#+END_QUOTE
+
+From the toggles menu:
+|-------+---------------------------|
+| Keys  | Action                    |
+|-------+---------------------------|
+| SPACE | Toggles ~outer-spaces-mode~ |
+|-------+---------------------------|
+
+*** Searching and replacing text
+
+**** Interactive search
+
+Unlike a regular search that takes the cursor through the points of occurrences, *super-emacs* provides an interactive search using *swiper*. This feature starts with a list of all the lines of text in the current buffer, letting you type in your search criteria to narrow the list down. Selecting a search result takes you to the point of occurrence.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/abo-abo/swiper][counsel]]
+#+END_QUOTE
+
+From the toggles menu:
+|-------+------------------------------------------------|
+| Keys  | Action                                         |
+|-------+------------------------------------------------|
+| C-c s | Starts ~swiper~ to provide an interactive search |
+|-------+------------------------------------------------|
+
+**** Interactive replace
+
+Replacing text is interactive too with the help of *anzu*, which displays the number of search results found for the current search criteria. Furthermore, while typing the new text to be used in place of searched term, it also displays the new text beside the old one for all occurrences in the buffer.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/emacsorphanage/anzu][anzu]]
+#+END_QUOTE
+
+|------+-------------------------------------|
+| Keys | Action                              |
+|------+-------------------------------------|
+| M-%  | Starts search and replace with *anzu* |
+|------+-------------------------------------|
+
+*** Autocomplete
+
+In most modes, a popup menu is presented at the position of the cursor when three or more characters are typed. The list contains auto-completion candidates matching the text that is being typed. This is achieved using *company-mode*.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/company-mode/company-mode][company-mode]]
+#+END_QUOTE
+
+Out of the many features the package provides, a few basic ones include scrolling down the list of presented options and selecting one for completion.
+
+|------------+-----------------------------------------------|
+| Keys       | Action                                        |
+|------------+-----------------------------------------------|
+| TAB or RET | Chooses the only suggested completion         |
+| M-p        | Scrolls up the list of suggestions            |
+| M-n        | Scrolls down the list of suggestions          |
+| RET        | Chooses the selected suggestion from the list |
+|------------+-----------------------------------------------|
+
+*** Multiple cursors
+
+When editing text of repetitive nature, repeating the same edit multiple times can get tiring. For such a scenario, one can use *multiple-cursors* to literally spawn multiple cursors in the current buffer according to the selected pattern. Once started, all edits made to the current line are replicated to the other lines with the temporary cursors and pressing ~RET~ brings it back to the original cursor.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/magnars/multiple-cursors.el][multiple-cursors]]
+#+END_QUOTE
+
+|------+------------------------------------------------------------------------------|
+| Keys | Action                                                                       |
+|------+------------------------------------------------------------------------------|
+| C-}  | Spawns an additional cursor for the next text matching the current selection |
+| C-{  | Spawns an additional cursor for previous text matching the current selection |
+| C-"  | Spawns cursors for all text matching the current selection                   |
+|------+------------------------------------------------------------------------------|
+
+*** Deletion of selected text
+
+Unlike the regular Emacs behavior where when some text is selected and the user starts typing, the text starts getting inserted at the point of the cursor, clearing the selection, in *super-emacs* one can start typing over a selection to replace it with the text being typed.
+
+*** Undo tree
+
+Imagine being able to visualize a historical graph of your undo operations. *undo-tree* does just that by rendering a tree with nodes in another buffer, letting you move between the nodes. When you're done moving back/forward, pressing ~q~ takes it to the default condition.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/emacsmirror/undo-tree][undo-tree]]
+#+END_QUOTE
+
+|--------------+-----------------------------------------------|
+| Keys         | Action                                        |
+|--------------+-----------------------------------------------|
+| C-\vert          | Shows a graph of states in the current buffer |
+| <arrow keys> | Move through the states                       |
+| q            | Dismisses the undo tree                       |
+|--------------+-----------------------------------------------|
+
+Another quick way to access the kill ring while yanking text is to use *counsel*.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/abo-abo/swiper][counsel]]
+#+END_QUOTE
+
+|------+-----------------------------------------|
+| Keys | Action                                  |
+|------+-----------------------------------------|
+| M-y  | Shows a list of items previously yanked |
+|------+-----------------------------------------|
+
+*** Spelling checks
+
+All text buffers are automatically checked for spelling. This is implemented with *ispell*, so if the external dependency *aspell* is installed, spellings will be automatically checked as you type.
+
+*** Working with colors
+
+When working with colors in a buffer, one can enable *rainbow-mode*, which will paint all text representing colors in their respective colors.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/emacsmirror/rainbow-mode][rainbow-mode]]
+#+END_QUOTE
+
+*** Text snippets
+
+One can provide text snippets for text and programming constructs and use tab completion to save keystrokes. This has been implemented using *yasnippet*, so you may refer to the [[https://github.com/joaotavora/yasnippet][project's repo]] to know about its comprehensive usage documentation. The snippets should be placed in the directory ~~/.emacs.d/snippets~.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/joaotavora/yasnippet][yasnippet]]
+#+END_QUOTE
+
+*** LaTex preview
+
+While working with LaTex documents, a live preview can be achieved right within Emacs using *latex-preview-pane*.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/jsinglet/latex-preview-pane][latex-preview-pane]]
+#+END_QUOTE
+
+** Navigation
+
+*** General buffer and window management
+
+With *counsel* in place, the regular commands to work with buffers and windows are significantly better.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/abo-abo/swiper][counsel]]
+#+END_QUOTE
+
+|---------+--------------------------------------------------------------|
+| Keys    | Action                                                       |
+|---------+--------------------------------------------------------------|
+| C-x b   | Uses *ivy* to provide a list of buffers to switch to one from  |
+| C-x C-f | Uses *counsel* to find a file                                  |
+| C-x C-r | Uses *counsel* to look for a recent file                       |
+| C-c b   | Uses *ivy* to push the current window layout as a buffer entry |
+|---------+--------------------------------------------------------------|
+
+*** Window layout history
+
+~winner-mode~ allows moving back and forth between window layouts.
+
+|-------------+---------------------------------------|
+| Keys        | Action                                |
+|-------------+---------------------------------------|
+| C-c <left>  | Moves back to previous windows layout |
+| C-c <right> | Moves to the next windows layout      |
+|-------------+---------------------------------------|
+
+*** Moving within the buffer, quickly
+
+One has at least three key bindings to quickly move around specific parts of a buffer using *avy*.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/abo-abo/avy][avy]]
+#+END_QUOTE
+
+From the editing menu:
+|------+---------------------------------------------------|
+| Keys | Action                                            |
+|------+---------------------------------------------------|
+| k    | Jump to a specific character in the buffer        |
+| j    | Jump to a word starting with a specific character |
+| l    | Jump to a specified line                          |
+|------+---------------------------------------------------|
+
+*** Jumping between windows
+
+Quickly moving focus between windows has been implemented using *ace-window*. When invoked, it distributes numbers to all the visible windows across all open frames. As it goes without saying, pressing the number corresponding to a window takes focus to that window.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/abo-abo/ace-window][ace-window]]
+#+END_QUOTE
+
+From the buffers & windows menu:
+|-----------+--------------------------------------------------|
+| Keys      | Action                                           |
+|-----------+--------------------------------------------------|
+| \         | Shows a menu of all visible windows with numbers |
+| S-<left>  | Moves to the window to the left                  |
+| S-<right> | Moves to the window to the right                 |
+| S-<up>    | Moves to the window above                        |
+| S-<down>  | Moves to the window below                        |
+|-----------+--------------------------------------------------|
+
+*** Moving buffers around
+
+If you'd like to re-arrange buffers among windows, *buffer-move* can help do that fairly easily.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/lukhas/buffer-move][buffer-move]]
+#+END_QUOTE
+
+From the buffers & windows menu:
+|-----------+----------------------------------------------|
+| Keys      | Action                                       |
+|-----------+----------------------------------------------|
+| M-<left>  | Swap buffer with the one in the left window  |
+| M-<right> | Swap buffer with the one in the right window |
+| M-<up>    | Swap buffer with the one in the window above |
+| M-<down>  | Swap buffer with the one in the window below |
+|-----------+----------------------------------------------|
+
+*** Resizing windows
+
+**** Manual
+
+If you'd like to resize windows without moving away from the keyboard, you can use *window-shaper*.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/myTerminal/window-shaper][window-shaper]]
+#+END_QUOTE
+
+From the buffers & windows menu:
+|------+-----------------------------------------------------------------------------------------------------------------|
+| Keys | Action                                                                                                          |
+|------+-----------------------------------------------------------------------------------------------------------------|
+| \under    | Starts ~window-shaper-mode~ to allow resizing the current window vertically or horizontally using the scroll keys |
+|------+-----------------------------------------------------------------------------------------------------------------|
+
+**** Automatic
+
+There's also the ~golden-ratio-mode~ that resizes windows on focus. Every window you move focus to becomes larger than the rest.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/roman/golden-ratio.el][golden-ratio]]
+#+END_QUOTE
+
+*** Workspaces
+
+Working with multiple workspaces is made possible using *perspective*.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/nex3/perspective-el][perspective]]
+#+END_QUOTE
+
+|---------+-------------------------------------------|
+| Keys    | Action                                    |
+|---------+-------------------------------------------|
+| M-s     | Switch to a named workspace or create one |
+| M-c     | Close a specified workspace               |
+| M-z C-s | Store all workspaces to disk              |
+| M-z C-l | Load previously-stored workspace          |
+|---------+-------------------------------------------|
+
+There are many more commands for you to explore.
+
+** File system
+
+*** Directory tree
+
+A simple directory tree is available using *ztree*, and it allows to expand and collapse directories to view their contents. One can view a tree using the command ~ztree-dir~ and supplying a directory to start at.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/fourier/ztree][ztree]]
+#+END_QUOTE
+
+From the tools menu:
+|------+----------------------------------------------|
+| Keys | Action                                       |
+|------+----------------------------------------------|
+| .    | Starts *ztree* at the specified directory      |
+|------+----------------------------------------------|
+
+*** dired add-ons
+
+Dired has been supplemented with a set of three add-ons: *dired-narrow*, *dired-subtree*, and *dired-ranger*. One can access any of these from within a dired buffer.
+
+#+BEGIN_QUOTE
+Packages used: [[https://github.com/Fuco1/dired-narrow][dired-narrow]], [[https://github.com/Fuco1/dired-subtree][dired-subtree]], [[https://github.com/Fuco1/dired-ranger][dired-ranger]]
+#+END_QUOTE
+
+From a dired buffer:
+|-----------+---------------------------------------------------------------|
+| Keys      | Action                                                        |
+|-----------+---------------------------------------------------------------|
+| \slash         | Helps filter the directory listing                            |
+| ]         | Toggles a subtree under the current item if it is a directory |
+| [         | Cycles a subtree through various expansion states             |
+| C-<up>    | Navigates to the beginning of a subtree                       |
+| C-<down>  | Navigates to the end of a subtree                             |
+| C-<left>  | Navigates one level up from the subtree                       |
+| C-<right> | Navigates one level down in the subtree                       |
+| M-<up>    | Navigates to the previous sibling in the subtree              |
+| M-<down>  | Navigates to the next sibling in the subtree                  |
+| M-<right> | Mark all items under the current subtree                      |
+| M-<left>  | Unmarks all items under the current subtree                   |
+| M-c       | Mark the current selection for copy                           |
+| M-m       | Move the previously selected items for copy                   |
+| M-v       | Paste the previously selected items for copy                  |
+|-----------+---------------------------------------------------------------|
+
+** Package sources
+
+*super-emacs* has been configured with three package sources in the following priority:
+
+|----------+----------------------------------|
+| Priority | Package archive                  |
+|----------+----------------------------------|
+|        1 | GNU ELPA                         |
+|        2 | MELPA Stable                     |
+|        3 | MELPA                            |
+|----------+----------------------------------|
+
+Even with this in place, packages are installed directly from [[https://github.com][GitHub]] using a package named *quelpa*.
+
+** Projects
+
+*** Working with projects
+
+Using *projectile*, working with software projects is made easy with all IDE-like features right within Emacs. One can find files, search for text within all files, and do much more with a few easy-to-remember key bindings.
+
+Listing down all the features of a package like *projectile* would be beyond the scope of this document, so you are suggested to refer to its own official documentation. There are also a few external dependencies that can be installed in order to improve the functionality of *projectile*.
+
+#+BEGIN_QUOTE
+Packages used: [[https://github.com/bbatsov/projectile][projectile]], [[https://github.com/ericdanan/counsel-projectile][counsel-projectile]], [[https://github.com/myTerminal/projectile-extras][projectile-extras]]
+#+END_QUOTE
+
+|------+----------------------------|
+| Keys | Action                     |
+|------+----------------------------|
+| C-\  | Starts the *projectile* menu |
+|------+----------------------------|
+
+From editing menu:
+|------+-----------------------------------------------------------|
+| Keys | Action                                                    |
+|------+-----------------------------------------------------------|
+| s    | Prompts for a text to search in the current project       |
+| r    | Searches for the term under cursor in the current project |
+|------+-----------------------------------------------------------|
+
+*** Supported languages
+
+Along with the other languages supported by default in Emacs, a few other packages have been installed to add (and sometimes improve) support for more languages. Some of them include *markdown-mode*, *web-mode* (for more than just HTML), *js2-mode* (as an improvement over the default JavaScript mode), *less-css-mode*, *scss-mode*, *sass-mode*, *yaml-mode*, *vue-mode*, *typescript-mode*, *rust-mode*, and *csharp-mode*.
+
+#+BEGIN_QUOTE
+Packages used: [[https://github.com/jrblevin/markdown-mode][markdown-mode]], [[https://github.com/fxbois/web-mode][web-mode]], [[https://github.com/mooz/js2-mode][js2-mode]], [[https://github.com/purcell/less-css-mode][less-css-mode]], [[https://github.com/antonj/scss-mode][scss-mode]], [[https://github.com/nex3/sass-mode][sass-mode]], [[https://github.com/yoshiki/yaml-mode][yaml-mode]], [[https://github.com/AdamNiederer/vue-mode][vue-mode]], [[https://github.com/emacs-typescript/typescript.el][typescript-mode]], [[https://github.com/rust-lang/rust-mode][rust-mode]], [[https://github.com/emacs-csharp/csharp-mode][csharp-mode]]
+#+END_QUOTE
+
+**** Common Lisp interface
+
+Specifically for Common Lisp, *slime* provides a development environment with a REPL and more.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/slime/slime][slime]]
+#+END_QUOTE
+
+*** Programming tools
+
+**** Definitions and references
+
+A "dumb" alternative to *projectile* is *dumb-jump*, at least for jumping to references to symbols within a software project and returning back to its reference.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/jacktasia/dumb-jump][dumb-jump]]
+#+END_QUOTE
+
+From the editing menu:
+|------+--------------------------------------------------------|
+| Keys | Action                                                 |
+|------+--------------------------------------------------------|
+| '    | Jumps to the definition of the symbol under the cursor |
+| "    | Returns back to the reference of the symbol            |
+|------+--------------------------------------------------------|
+
+**** Working with language server
+
+For a better programming experience, *super-emacs* comes with *eglot*, a language server client that can connect to the language server for a particular language being worked on. *eglot* is another such package that has a massive list of features that you can learn about at its official documentation.
+
+Basically running ~eglot~ in a buffer lets you start a connection to the language server, if one is installed.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/joaotavora/eglot][eglot]]
+#+END_QUOTE
+
+**** Quickrun
+
+When needing to evaluate snippets from a buffer, *quickrun* could be of help. It supports more than just evaluating expressions.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/emacsorphanage/quickrun][quickrun]]
+#+END_QUOTE
+
+In a programming buffer:
+|-------+-----------------------------------------------------------------------------|
+| Keys  | Action                                                                      |
+|-------+-----------------------------------------------------------------------------|
+| C-c e | Evaluates the expression to the left of the cursor                          |
+| C-c r | Evaluates the selected region                                               |
+| C-c t | Evaluates the selected region and replaces it with the result in the buffer |
+|-------+-----------------------------------------------------------------------------|
+
+**** Restclient
+
+*restclient* allows testing REST APIs from Emacs. One can edit requests on the left and see the results from the response on the right.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/pashky/restclient.el][restclient]]
+#+END_QUOTE
+
+**** Live development
+
+*skewer-mode* provides live interaction with *JavaScript*, *CSS*, and *HTML* in a web browser.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/skeeto/skewer-mode][skewer-mode]]
+#+END_QUOTE
+
+*** Source versioning
+
+**** Git interface
+
+*magit* provides a fully-featured text-based interface to *git*. The menus are very user-friendly, and you can do pretty much everything from a single command named ~magit-status~.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/magit/magit][magit]]
+#+END_QUOTE
+
+|-------+-----------------------------------------------------------------------------------------------------|
+| Keys  | Action                                                                                              |
+|-------+-----------------------------------------------------------------------------------------------------|
+| C-x g | Shows ~magit-status~ and waits for a command. Pressing ~h~ or ~?~ shows help around all possible commands |
+|-------+-----------------------------------------------------------------------------------------------------|
+
+**** Change highlights in buffers and dired buffers
+
+Information about file changes is displayed in the file buffer or within a dired buffer. This has been implemented using *diff-hl*, requiring no user interaction for basic features.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/dgutov/diff-hl][diff-hl]]
+#+END_QUOTE
+
+** Internet
+
+*** Email client
+
+*super-emacs* also comes with an email client: *mew*. Feel free to refer to the official documentation for information on how to configure it for your account and about usage.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/kazu-yamamoto/Mew][mew]]
+#+END_QUOTE
+
+** Statistical computing
+
+*super-emacs* provides access to statistical computing with *ess* and *polymode*.
+
+#+BEGIN_QUOTE
+Packages used: [[https://github.com/emacs-ess/ESS][ess]], [[https://github.com/polymode/polymode][polymode]], [[https://github.com/polymode/poly-R][poly-R]], [[https://github.com/polymode/poly-markdown][poly-markdown]]
+#+END_QUOTE
+
+** Misc
+
+*** Auto-save and backup
+
+Automatic backups are disabled so that your directories are no polluted with temporary files ending with a "~".
+
+*** Informative startup screen
+
+The startup screen displays some useful information about the current Emacs version, date, active config file, etc.
+
+*** Interaction with hardware
+
+**** Battery information
+
+For portable machines with a battery as a power source, the current remaining battery level is displayed in the modeline.
+
+**** Sound volume
+
+With the right sound volume backend, the volume level can be controlled using *volume.el*.
+
+#+BEGIN_QUOTE
+Package used: [[https://github.com/dbrock/volume.el][volume]]
+#+END_QUOTE
+
+*** Other miscellaneous tweaks
+
+There are the following minor tweaks:
+
+|---------------+-------------------------------------------------------------------------------------|
+| Keys          | Action                                                                              |
+|---------------+-------------------------------------------------------------------------------------|
+| C-c p         | Switches to the previously viewed buffer                                            |
+| C-x k         | Kills the current buffer instead of prompting from a list                           |
+| M-<down>      | Moves the current line down a position                                              |
+| M-<up>        | Moves the current line up a position                                                |
+| C-<backspace> | Deletes the word to the left of the cursor instead of killing it into the kill-ring |
+| C-=           | Evaluates the expression to the left and replaces it with the result                |
+|---------------+-------------------------------------------------------------------------------------|
+
+From tools menu:
+|------+-----------------------------------------|
+| Keys | Action                                  |
+|------+-----------------------------------------|
+| \slash    | Starts a terminal in the current window |
+| i    | Prompts to connect to IRC               |
+|------+-----------------------------------------|
+
+From editing menu:
+|------+----------------------------------------|
+| Keys | Action                                 |
+|------+----------------------------------------|
+| r    | Reloads the file in the current buffer |
+|------+----------------------------------------|
+
+From buffers & windows menu:
+|------+----------------------------------------------------|
+| Keys | Action                                             |
+|------+----------------------------------------------------|
+| +    | Toggles split direction of current pair of windows |
+|------+----------------------------------------------------|
+
+** More...
+
+There are a lot of other minor tweaks that *super-emacs* comes with in order to make a complete system.
+
+* Configured key-bindings
+
+* Customizing
+
+The recommended way to customize *super-emacs* is to place your custom configuration scripts under [[../.emacs.d/configs/basic-custom.el]] and [[../.emacs.d/configs/standard-custom.el]] for text and graphical modes respectively. Configuration files will be loaded in the correct order so that your custom configuration will override the ones from *super-emacs*. This way, whenever there's an update to the original file, there will be no merge conflicts and life would be so much simpler!
+
+There are also variables in [[./..emacs.d/configs/variables.el]] that you can customize to alter certain things in *super-emacs*.
+
+* FAQs
+
+(coming soon...)
+
+# Local Variables:
+# eval: (visual-line-mode 1)
+# End:

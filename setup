@@ -1,0 +1,87 @@
+#!/usr/bin/env bash
+
+project_remote_url="https://github.com/myTerminal/super-emacs.git"
+project_dir_name=".super-emacs"
+user_home_dir=$(cd "/home/$USER"; pwd -P)
+emacs_dir_old=$user_home_dir/.emacs.d
+emacs_dir_new=$user_home_dir/.config/emacs
+
+# Determine the platform and target directory
+platform=$(uname)
+if [ $platform = 'Linux' ]; then
+    base_dir=$user_home_dir
+    project_dir=$base_dir/$project_dir_name
+	install_dir=$user_home_dir/.emacs.d
+elif [ $platform = 'Darwin' ]; then
+    # TODO: Implement
+    echo "macOS found."
+else
+    # TODO: Implement
+    echo "Unknown OS!"
+fi
+
+# Clone the git project at the appropriate path
+git clone $project_remote_url $project_dir
+
+# Check for existing Emacs config
+if [ -d $emacs_dir_old ] || [ -d $emacs_dir_new ]; then
+    echo "Emacs config found. Setting up super-emacs will replace it. Are you sure? (y/n)?"
+    read -n1 -r -p "> " temp_user_response
+    if [ $temp_user_response == "y" ] || [ $temp_user_response == "Y" ]; then
+        echo -e "\nExisting Emacs config removed."
+        rm -rf $emacs_dir_old $emacs_dir_new
+    else
+        echo -e "\nSetup has ended without changes to your Emacs config."
+        exit 0
+    fi
+fi
+
+# Link Emacs directory to project directory
+echo "Creating links to super-emacs..."
+ln -s $project_dir/.emacs.d $emacs_dir_new
+ln -s $project_dir/.emacs.d $emacs_dir_old
+
+# Install dependencies: fonts
+echo "Installing font Liberation..."
+mkdir -p ~/.local/share/fonts
+mkdir ~/_temp
+( cd ~/_temp; wget https://github.com/liberationfonts/liberation-fonts/files/6418984/liberation-fonts-ttf-2.1.4.tar.gz; tar -xvf liberation-fonts-ttf-2.1.4.tar.gz )
+mkdir ~/.local/share/fonts/Liberation
+mv ~/_temp/liberation-fonts-ttf-2.1.4/Liberation*  ~/.local/share/fonts/Liberation/
+rm -rf ~/_temp
+
+# Install dependencies: aspell
+echo "Install aspell for spell-check?"
+read -n1 -r -p "> " temp_user_response
+if [ $temp_user_response == "y" ] || [ $temp_user_response == "Y" ]; then
+    # TODO: Add support for more platforms
+    echo "Installing aspell..."
+    if [ $(command -v xbps-query) ]; then
+        sudo xbps-install -Sy aspell
+    elif [ $(command -v pacman) ]; then
+        sudo pacman -S aspell --noconfirm
+    elif [ $(command -v dnf) ]; then
+        sudo dnf install -y aspell
+    elif [ $(command -v apt) ]; then
+        sudo apt install -y aspell
+    fi
+fi
+
+# Install dependencies: R
+echo "Install R for statistical computing?"
+read -n1 -r -p "> " temp_user_response
+if [ $temp_user_response == "y" ] || [ $temp_user_response == "Y" ]; then
+    # TODO: Add support for more platforms
+    echo "Installing R..."
+    if [ $(command -v xbps-query) ]; then
+        sudo xbps-install -Sy R
+    elif [ $(command -v pacman) ]; then
+        sudo pacman -S r --noconfirm
+    elif [ $(command -v dnf) ]; then
+        sudo dnf install -y R
+    elif [ $(command -v apt) ]; then
+        sudo apt install -y r-base
+    fi
+fi
+
+echo "Setup for super-emacs has ended."

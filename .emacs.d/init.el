@@ -1,25 +1,35 @@
 (require 'cl-lib)
 
+;; Record startup timestamp
+(defvar se2/invokation-time
+  (current-time))
+
 ;; Initialize root
-(defvar se/config-root
+(defvar se2/se-root
   (file-name-directory load-file-name))
 
-(defun se/start ()
+;; Determine config root
+(defvar se2/config-root
+  (file-name-directory user-init-file))
+
+(defun se2/load-config (config-name)
+  "Loads all the config files for the specified config."
+  (mapc 'load (file-expand-wildcards (concat se2/se-root
+                                             "configs/"
+                                             config-name
+                                             "-*.el"))))
+
+(defun se2/start ()
   "Loads core and then conditionally loads configs."
-  (cl-flet* ((start-basic ()
-                          (se/load-file "modes/basic/misc")
-                          (se/load-file "modes/basic/packages")
-                          (se/load-file "modes/basic/key-bindings"))
-             (start-standard ()
-                             (se/load-file "modes/standard/misc")
-                             (se/load-file "modes/standard/packages")
-                             (se/load-file "modes/standard/key-bindings")))
-    (load (expand-file-name "core"
-			                se/config-root))
-    (start-basic)
-    (if (display-graphic-p)
-        (start-standard))
-    (se/print-startup-message)))
+  (load (expand-file-name "lib"
+			              se2/se-root))
+  (load (expand-file-name "variables"
+			              (concat se2/se-root
+                                  "configs")))
+  (se2/load-config "basic")
+  (if (display-graphic-p)
+      (se2/load-config "standard"))
+  (se2/show-welcome-screen))
 
 ;; Start
-(se/start)
+(se2/start)

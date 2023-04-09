@@ -4,12 +4,11 @@
 
 !/.emacs.d
 /.emacs.d/*
-!/.emacs.d/modes
-!/.emacs.d/core.el
+!/.emacs.d/configs
 !/.emacs.d/lib.el
 !/.emacs.d/init.el
 
-!/Dockerfile
-!/images
+!/docs
+!/setup
 !/LICENSE
 !/README.md
