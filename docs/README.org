@@ -400,15 +400,15 @@ Package used: [[https://github.com/abo-abo/ace-window][ace-window]]
 #+END_QUOTE
 
 From the buffers & windows menu:
-|---------+-------------------------------------------------|
-| Keys    | Action                                          |
-|---------+-------------------------------------------------|
-| \       | Show a menu of all visible windows with numbers |
-| <left>  | Moves to the window to the left                 |
-| <right> | Moves to the window to the right                |
-| <up>    | Moves to the window above                       |
-| <down>  | Moves to the window below                       |
-|---------+-------------------------------------------------|
+|-----------+--------------------------------------------------|
+| Keys      | Action                                           |
+|-----------+--------------------------------------------------|
+| \         | Shows a menu of all visible windows with numbers |
+| S-<left>  | Moves to the window to the left                  |
+| S-<right> | Moves to the window to the right                 |
+| S-<up>    | Moves to the window above                        |
+| S-<down>  | Moves to the window below                        |
+|-----------+--------------------------------------------------|
 
 *** Moving buffers around
 
@@ -422,10 +422,10 @@ From the buffers & windows menu:
 |-----------+----------------------------------------------|
 | Keys      | Action                                       |
 |-----------+----------------------------------------------|
-| S-<left>  | Swap buffer with the one in the left window  |
-| S-<right> | Swap buffer with the one in the right window |
-| S-<up>    | Swap buffer with the one in the window above |
-| S-<down>  | Swap buffer with the one in the window below |
+| M-<left>  | Swap buffer with the one in the left window  |
+| M-<right> | Swap buffer with the one in the right window |
+| M-<up>    | Swap buffer with the one in the window above |
+| M-<down>  | Swap buffer with the one in the window below |
 |-----------+----------------------------------------------|
 
 *** Resizing windows
@@ -442,7 +442,7 @@ From the buffers & windows menu:
 |------+-----------------------------------------------------------------------------------------------------------------|
 | Keys | Action                                                                                                          |
 |------+-----------------------------------------------------------------------------------------------------------------|
-| r    | Starts ~window-shaper-mode~ to allow resizing the current window vertically or horizontally using the scroll keys |
+| \under    | Starts ~window-shaper-mode~ to allow resizing the current window vertically or horizontally using the scroll keys |
 |------+-----------------------------------------------------------------------------------------------------------------|
 
 **** Automatic

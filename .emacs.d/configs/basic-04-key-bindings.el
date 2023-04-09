@@ -44,18 +44,18 @@ _s_ line-spacing:  %`line-spacing
 (defhydra se2/hydra-windows ()
   "Buffers and Windows"
   ;; Moving
-  ("<up>" windmove-up "^")
-  ("<down>" windmove-down "v")
-  ("<left>" windmove-left "<")
-  ("<right>" windmove-right ">")
-  ("S-<up>" buf-move-up "Move up")
-  ("S-<down>" buf-move-down "Move down")
-  ("S-<left>" buf-move-left "Move left")
-  ("S-<right>" buf-move-right "Move right")
+  ("S-<up>" windmove-up "^")
+  ("S-<down>" windmove-down "v")
+  ("S-<left>" windmove-left "<")
+  ("S-<right>" windmove-right ">")
+  ("M-<up>" buf-move-up "Move up")
+  ("M-<down>" buf-move-down "Move down")
+  ("M-<left>" buf-move-left "Move left")
+  ("M-<right>" buf-move-right "Move right")
   ;; Jumping
   ("\\" ace-window "Jump to window" :color blue)
   ;; Arranging
-  ("r" window-shaper-mode "Resize windows" :color blue)
+  ("_" window-shaper-mode "Resize windows" :color blue)
   ("+" se2/window-toggle-split-direction "Horizontal<>Vertical")
   ;; Misc
   ("q" nil "Cancel"))
