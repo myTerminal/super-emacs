@@ -16,7 +16,7 @@ Simply execute the following command in a terminal:
 
 #+NAME: command_install_automatic
 #+BEGIN_SRC bash
-  /bin/bash -c "$(curl https://raw.githubusercontent.com/myTerminal/super-emacs/v2.0.0/setup)"
+  /bin/bash -c "$(curl https://raw.githubusercontent.com/myTerminal/super-emacs/master/setup)"
 #+END_SRC
 
 If everything goes as planned, the next time you start Emacs, *super-emacs* will be automatically configured.

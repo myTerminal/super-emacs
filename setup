@@ -21,7 +21,7 @@ else
 fi
 
 # Clone the git project at the appropriate path
-( git clone $project_remote_url $project_dir; git -C $project_dir checkout v2.0.0 )
+git clone $project_remote_url $project_dir
 
 # Check for existing Emacs config
 if [ -d $emacs_dir_old ] || [ -d $emacs_dir_new ]; then
