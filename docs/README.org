@@ -403,7 +403,7 @@ From the buffers & windows menu:
 |---------+-------------------------------------------------|
 | Keys    | Action                                          |
 |---------+-------------------------------------------------|
-| ]       | Show a menu of all visible windows with numbers |
+| \       | Show a menu of all visible windows with numbers |
 | <left>  | Moves to the window to the left                 |
 | <right> | Moves to the window to the right                |
 | <up>    | Moves to the window above                       |
