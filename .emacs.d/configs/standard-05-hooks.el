@@ -15,5 +15,7 @@
 
 (add-hook 'prog-mode-hook
           (lambda ()
-            (setq buffer-face-mode-face `(:family ,se2/variable/font-family-for-programming))
-            (buffer-face-mode)))
+            (if (find-font (font-spec :name se2/variable/font-family-for-programming))
+                (progn
+                  (setq buffer-face-mode-face `(:family ,se2/variable/font-family-for-programming))
+                  (buffer-face-mode)))))
