@@ -60,6 +60,7 @@
                                    ("MELPA"        . 0)))
 (package-initialize)
 (unless (package-installed-p 'quelpa)
+  (package-refresh-contents)
   (with-temp-buffer
     (url-insert-file-contents "https://raw.githubusercontent.com/quelpa/quelpa/master/quelpa.el")
     (eval-buffer)
