@@ -41,6 +41,9 @@ echo "Creating links to super-emacs..."
 ln -s $project_dir/.emacs.d $emacs_dir_new
 ln -s $project_dir/.emacs.d $emacs_dir_old
 
+# Fetch crater-cli for temporary use
+git clone https://github.com/crater-space/cli /tmp/crater-cli
+
 # Install dependencies: fonts
 echo "Installing font Liberation..."
 mkdir -p ~/.local/share/fonts
@@ -54,34 +57,17 @@ rm -rf ~/_temp
 echo "Install aspell for spell-check?"
 read -n1 -r -p "> " temp_user_response
 if [ $temp_user_response == "y" ] || [ $temp_user_response == "Y" ]; then
-    # TODO: Add support for more platforms
-    echo "Installing aspell..."
-    if [ $(command -v xbps-query) ]; then
-        sudo xbps-install -Sy aspell
-    elif [ $(command -v pacman) ]; then
-        sudo pacman -S aspell --noconfirm
-    elif [ $(command -v dnf) ]; then
-        sudo dnf install -y aspell
-    elif [ $(command -v apt) ]; then
-        sudo apt install -y aspell
-    fi
+    /tmp/crater-cli/crater install aspell
 fi
 
 # Install dependencies: R
 echo "Install R for statistical computing?"
 read -n1 -r -p "> " temp_user_response
 if [ $temp_user_response == "y" ] || [ $temp_user_response == "Y" ]; then
-    # TODO: Add support for more platforms
-    echo "Installing R..."
-    if [ $(command -v xbps-query) ]; then
-        sudo xbps-install -Sy R
-    elif [ $(command -v pacman) ]; then
-        sudo pacman -S r --noconfirm
-    elif [ $(command -v dnf) ]; then
-        sudo dnf install -y R
-    elif [ $(command -v apt) ]; then
-        sudo apt install -y r-base
-    fi
+    /tmp/crater-cli/crater install r
 fi
+
+# Remove temporary crater-cli
+rm -rf /tmp/crater-cli
 
 echo "Setup for super-emacs has ended."
