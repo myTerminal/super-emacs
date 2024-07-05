@@ -727,7 +727,7 @@ From editing menu:
 |------+----------------------------------------|
 | Keys | Action                                 |
 |------+----------------------------------------|
-| r    | Reloads the file in the current buffer |
+| f    | Reloads the file in the current buffer |
 |------+----------------------------------------|
 
 From buffers & windows menu:

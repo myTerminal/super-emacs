@@ -38,7 +38,7 @@ _s_ line-spacing:  %`line-spacing
   ("s" projectile-find-all-occurrences "Search for occurrences")
   ("r" projectile-find-all-references "Search for references")
   ;; Misc
-  ("r" se2/reload-current-file "Reload file")
+  ("f" se2/reload-current-file "Reload file")
   ("q" nil "Cancel"))
 
 (defhydra se2/hydra-windows ()
