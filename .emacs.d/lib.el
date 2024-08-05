@@ -22,6 +22,8 @@
              (get-bold-text (text)
                             (propertize text 'face '(:weight bold)))
              (set-key-bindings ()
+                               (local-set-key (kbd "z")
+                                              'persp-state-load)
                                (local-set-key (kbd "q")
                                               (lambda ()
                                                 (interactive)
@@ -37,6 +39,8 @@
                       "Logged in as: " (get-bold-text user-login-name) "\n"
                       "Host: " (get-bold-text system-name) " (" (get-bold-text (get-operating-system)) ")" "\n"
                       "Init file: " (get-bold-text user-init-file) "\n"
+                      "\n"
+                      (get-bold-text "[z]") " to resume session"
                       "\n"
                       (get-bold-text "[q]") " to dismiss"))
       (super-emacs-welcome-mode)

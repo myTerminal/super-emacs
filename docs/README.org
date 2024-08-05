@@ -686,6 +686,15 @@ Automatic backups are disabled so that your directories are no polluted with tem
 
 The startup screen displays some useful information about the current Emacs version, date, active config file, etc.
 
+The following actions are available on the startup screen:
+
+|------+---------------------------------------------------------------|
+| Keys | Action                                                        |
+|------+---------------------------------------------------------------|
+| z    | Shows a prompt to load a previously saved ~perspective~ session |
+| q    | Dismisses the startup screen                                  |
+|------+---------------------------------------------------------------|
+
 *** Interaction with hardware
 
 **** Battery information
