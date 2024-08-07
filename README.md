@@ -16,6 +16,7 @@ An out-of-the-box Emacs configuration with superpowers
 - Several tweaks and settings for a better programming experience in multiple languages and to work with projects and named workspaces
 - More control over package versioning using [quelpa](https://github.com/quelpa/quelpa)
 - Statistical computing with [R Markdown](https://rmarkdown.rstudio.com) files
+- Interaction with large language models from within buffers
 - More in [the docs](docs)!
 
 ## Documentation
