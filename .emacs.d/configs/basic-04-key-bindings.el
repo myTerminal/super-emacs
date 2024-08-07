@@ -23,6 +23,7 @@ _s_ line-spacing:  %`line-spacing
   ("." ztree-dir "ztree")
   ("/" term "Terminal")
   ("i" se2/prompt-to-connect-to-irc "Connect to IRC")
+  ("?" ellama-chat "Chat with Ellama")
   ("q" nil "Cancel"))
 
 (defhydra se2/hydra-editing (:color blue)

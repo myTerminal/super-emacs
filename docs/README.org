@@ -680,6 +680,22 @@ Package used: [[https://github.com/kazu-yamamoto/Mew][mew]]
 Packages used: [[https://github.com/emacs-ess/ESS][ess]], [[https://github.com/polymode/polymode][polymode]], [[https://github.com/polymode/poly-R][poly-R]], [[https://github.com/polymode/poly-markdown][poly-markdown]]
 #+END_QUOTE
 
+** Large language models
+
+*super-emacs* has an integration with large language models that you can interact with in quite a lot of ways.
+
+#+BEGIN_QUOTE
+Packages used: [[https://github.com/s-kostyaev/ellama][ellama]]
+#+END_QUOTE
+
+From tools menu:
+
+|------+------------------------------------------|
+| Keys | Action                                   |
+|------+------------------------------------------|
+| ?    | Starts a chat with Ellama                |
+|------+------------------------------------------|
+
 ** Misc
 
 *** Auto-save and backup
