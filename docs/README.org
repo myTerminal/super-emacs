@@ -712,6 +712,7 @@ The following actions are available on the startup screen:
 | Keys | Action                                                        |
 |------+---------------------------------------------------------------|
 | z    | Shows a prompt to load a previously saved ~perspective~ session |
+| ?    | Starts a chat with Ellama                                     |
 | q    | Dismisses the startup screen                                  |
 |------+---------------------------------------------------------------|
 
