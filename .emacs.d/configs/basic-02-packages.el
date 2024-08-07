@@ -46,6 +46,7 @@
     (counsel github "abo-abo/swiper" t ("counsel.el"))
     (key-chord github "emacsorphanage/key-chord" nil)
     (hydra github "abo-abo/hydra" t)
+    (ellama github "s-kostyaev/ellama" nil)
     ;; Networking tools
     (mew github "kazu-yamamoto/Mew" t ("elisp/*.el"))
     ;; Statistical computing

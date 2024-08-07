@@ -65,6 +65,10 @@ The below two fonts have been configured by default:
 
 For spell-check, you need to have ~aspell~ installed on the system for it to work with ~ispell~. Refer to [[http://aspell.net][the official site]] for instructions on how to install it on your operating system.
 
+** [[https://github.com/ollama/ollama][ollama]] along with a model like [[https://ollama.com/library/zephyr][zephyr]]
+
+To be able to interact with LLMs from within *super-emacs*.
+
 ** [[https://www.r-project.org][R]]
 
 To be able to work with R Markdown files, *super-emacs* comes pre-configured with all the required packages except for an external dependency on [[https://www.r-project.org][R]] which needs to be installed on the system.
