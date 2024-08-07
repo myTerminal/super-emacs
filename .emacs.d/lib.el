@@ -24,6 +24,8 @@
              (set-key-bindings ()
                                (local-set-key (kbd "z")
                                               'persp-state-load)
+                               (local-set-key (kbd "?")
+                                              'ellama-chat)
                                (local-set-key (kbd "q")
                                               (lambda ()
                                                 (interactive)
@@ -41,6 +43,8 @@
                       "Init file: " (get-bold-text user-init-file) "\n"
                       "\n"
                       (get-bold-text "[z]") " to resume session"
+                      "\n"
+                      (get-bold-text "[?]") " to start a chat with Ellama"
                       "\n"
                       (get-bold-text "[q]") " to dismiss"))
       (super-emacs-welcome-mode)
