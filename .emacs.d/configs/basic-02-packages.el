@@ -109,14 +109,14 @@
   (kbd "C-\\")
   'projectile-command-map)
 
-(key-chord-mode 1)
-
 (which-key-mode)
 
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t
       projectile-completion-system 'ivy)
 (counsel-projectile-mode)
+
+(key-chord-mode 1)
 
 (dim-minor-names '((undo-tree-mode nil undo-tree)
                    (anzu-mode nil anzu)
