@@ -690,11 +690,12 @@ Packages used: [[https://github.com/s-kostyaev/ellama][ellama]]
 
 From tools menu:
 
-|------+------------------------------------------|
-| Keys | Action                                   |
-|------+------------------------------------------|
-| ?    | Starts a chat with Ellama                |
-|------+------------------------------------------|
+|------+-----------------------------|
+| Keys | Action                      |
+|------+-----------------------------|
+| ?    | Starts a chat with Ellama   |
+| l    | Prompt for an Ellama action |
+|------+-----------------------------|
 
 ** Misc
 

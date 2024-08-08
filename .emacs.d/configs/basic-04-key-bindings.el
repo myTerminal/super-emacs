@@ -1,3 +1,54 @@
+;;; Add-on for Ellama
+
+(defun ellama-omni-menu ()
+  "Provide the user with all Ellama actions."
+  (interactive)
+  (let ((ellama-actions '(
+                          ellama-code-complete
+                          ellama-code-add
+                          ellama-code-edit
+                          ellama-code-improve
+                          ellama-code-review
+                          ellama-generate-commit-message
+                          ellama-summarize
+                          ellama-summarize-webpage
+                          ellama-summarize-killring
+                          ellama-load-session
+                          ellama-session-rename
+                          ellama-session-remove
+                          ellama-session-switch
+                          ellama-improve-wording
+                          ellama-improve-grammar
+                          ellama-improve-conciseness
+                          ellama-make-list
+                          ellama-make-table
+                          ellama-make-format
+                          ellama-ask-about
+                          ellama-chat
+                          ellama-ask-line
+                          ellama-ask-selection
+                          ellama-translate
+                          ellama-translate-buffer
+                          ellama-complete
+                          ellama-chat-translation-enable
+                          ellama-chat-translation-disable
+                          ellama-define-word
+                          ellama-context-add-buffer
+                          ellama-context-add-file
+                          ellama-context-add-selection
+                          ellama-context-add-info-node
+                          ellama-provider-select
+                          )))
+    (if (featurep 'ivy)
+        (let ((ivy-wrap t))
+          (ivy-read "Ellama: "
+                    ellama-actions
+                    :action (lambda (th)
+                              (call-interactively (intern th)))))
+      (call-interactively (intern (ido-completing-read "Ellama: "
+                                                       (mapcar #'symbol-name
+                                                               ellama-actions)))))))
+
 ;;; Hydras
 
 (defhydra se2/hydra-toggles (:color pink)
@@ -23,6 +74,7 @@ _s_ line-spacing:  %`line-spacing
   ("." ztree-dir "ztree")
   ("/" term "Terminal")
   ("i" se2/prompt-to-connect-to-irc "Connect to IRC")
+  ("l" ellama-omni-menu "Ellama...")
   ("?" ellama-chat "Chat with Ellama")
   ("q" nil "Cancel"))
 
