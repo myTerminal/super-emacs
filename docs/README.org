@@ -591,8 +591,8 @@ From the editing menu:
 |------+--------------------------------------------------------|
 | Keys | Action                                                 |
 |------+--------------------------------------------------------|
-| '    | Jumps to the definition of the symbol under the cursor |
-| "    | Returns back to the reference of the symbol            |
+| >    | Jumps to the definition of the symbol under the cursor |
+| <     | Returns back to the reference of the symbol            |
 |------+--------------------------------------------------------|
 
 **** Working with language server

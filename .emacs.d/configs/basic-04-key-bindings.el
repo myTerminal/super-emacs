@@ -81,8 +81,8 @@ _s_ line-spacing:  %`line-spacing
 (defhydra se2/hydra-editing (:color blue)
   "Editing"
   ;; Programming
-  ("'" dumb-jump-go "Go to definition")
-  ("\"" dumb-jump-back "Back from definition")
+  (">" dumb-jump-go "Go to definition")
+  ("<" dumb-jump-back "Back from definition")
   ;; Jumping
   ("k" avy-goto-char-timer "Jump to char")
   ("j" avy-goto-word-1 "Jump to word")
