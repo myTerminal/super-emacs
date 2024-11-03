@@ -393,6 +393,7 @@ From the editing menu:
 | k    | Jump to a specific character in the buffer        |
 | j    | Jump to a word starting with a specific character |
 | l    | Jump to a specified line                          |
+| [    | Go back to where you started from                 |
 |------+---------------------------------------------------|
 
 *** Jumping between windows

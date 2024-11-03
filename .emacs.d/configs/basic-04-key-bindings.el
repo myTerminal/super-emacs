@@ -87,6 +87,7 @@ _s_ line-spacing:  %`line-spacing
   ("k" avy-goto-char-timer "Jump to char")
   ("j" avy-goto-word-1 "Jump to word")
   ("l" avy-goto-line "Jump to line")
+  ("[" pop-global-mark "Go back")
   ;; Searching
   ("s" projectile-find-all-occurrences "Search for occurrences")
   ("r" projectile-find-all-references "Search for references")
