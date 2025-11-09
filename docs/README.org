@@ -144,14 +144,16 @@ Package used: [[https://github.com/emacsorphanage/key-chord][key-chord]]
 #+END_QUOTE
 
 From the toggles menu:
-|------+------------------------------------------------------------------|
-| Keys | Action                                                           |
-|------+------------------------------------------------------------------|
-| l    | Toggles line numbers in the current buffer                       |
-| w    | Toggles word-wrap in the current buffer                          |
-| k    | Toggles whether to kill line-endings when killing lines with ~C-k~ |
-| s    | Toggles extra line-spacing in the current buffer                 |
-|------+------------------------------------------------------------------|
+|-------+------------------------------------------------------------------|
+| Keys  | Action                                                           |
+|-------+------------------------------------------------------------------|
+| l     | Toggles line numbers in the current buffer                       |
+| w     | Toggles word-wrap in the current buffer                          |
+| c     | Toggles showing of current buffer character count                |
+| SPACE | Toggles outer-spaces mode                                        |
+| k     | Toggles whether to kill line-endings when killing lines with ~C-k~ |
+| s     | Toggles extra line-spacing in the current buffer                 |
+|-------+------------------------------------------------------------------|
 
 *** Help with key-bindings
 
