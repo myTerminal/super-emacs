@@ -92,6 +92,12 @@ _s_ line-spacing:  %`line-spacing
 
 ;;; Regular key-bindings
 
+(global-set-key (kbd "C-x C-c")
+                (lambda ()
+                  "Function to inform user that the interactive action was blocked."
+                  (interactive)
+                  (message "Accidental action blocked!")))
+
 (se2/bind-keys '(
                  ;; Buffer/Window management
                  ("C-x b" . ivy-switch-buffer)
@@ -113,7 +119,8 @@ _s_ line-spacing:  %`line-spacing
                  ("C-c s" . swiper)
                  ;; Misc
                  ("C-=" . se2/eval-and-replace)
-                 ("M-x" . counsel-M-x))
+                 ("M-x" . counsel-M-x)
+                 ("C-x C-`" . save-buffers-kill-terminal))
                global-map)
 
 (se2/bind-keys '(

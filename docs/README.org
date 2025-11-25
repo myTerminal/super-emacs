@@ -702,6 +702,16 @@ From tools menu:
 
 ** Misc
 
+*** Preventing accidental quit
+
+*super-emacs* cannot be quit using ~C-x C-c~ to prevent losing unsaved buffer layouts and other settings by accident. To quit Emacs, the following key-binding has been chosen such that it's least likely to get triggered unintentionally.
+
+|---------+-------------|
+| Keys    | Action      |
+|---------+-------------|
+| C-x C-` | Quits Emacs |
+|---------+-------------|
+
 *** Auto-save and backup
 
 Automatic backups are disabled so that your directories are no polluted with temporary files ending with a "~".
