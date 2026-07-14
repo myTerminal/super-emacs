@@ -150,6 +150,7 @@ From the toggles menu:
 | l     | Toggles line numbers in the current buffer                       |
 | w     | Toggles word-wrap in the current buffer                          |
 | c     | Toggles showing of current buffer character count                |
+| \/    | Toggles auto filling column as you type                          |
 | SPACE | Toggles outer-spaces mode                                        |
 | k     | Toggles whether to kill line-endings when killing lines with ~C-k~ |
 | s     | Toggles extra line-spacing in the current buffer                 |

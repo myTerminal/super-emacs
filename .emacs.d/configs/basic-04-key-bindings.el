@@ -23,6 +23,7 @@
 _l_ line-numbers:  %`display-line-numbers-mode
 _w_ word-wrap:  %`visual-line-mode
 _c_ character count:  %`size-indication-mode
+_/_ auto-fill-mode:  %`auto-fill-function
 _SPC_ outer-spaces:  %`outer-spaces-mode
 _k_ super-kill:  %`kill-whole-line
 _s_ line-spacing:  %`line-spacing
@@ -31,6 +32,7 @@ _s_ line-spacing:  %`line-spacing
   ("l" display-line-numbers-mode nil)
   ("w" visual-line-mode nil)
   ("c" size-indication-mode nil)
+  ("/" auto-fill-mode nil)
   ("SPC" outer-spaces-mode nil)
   ("k" se2/toggle-super-kill nil)
   ("s" se2/toggle-line-spacing nil) ; TODO: Move to standard mode

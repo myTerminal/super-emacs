@@ -25,6 +25,7 @@
 (column-number-mode)
 (show-paren-mode)
 (global-hl-line-mode)
+(setq fill-column 80)
 (setq-default indent-tabs-mode nil
               tab-width 4)
 (set-default 'cursor-type
