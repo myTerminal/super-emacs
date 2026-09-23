@@ -125,25 +125,26 @@ _s_ line-spacing:  %`line-spacing
                  ("C-x C-`" . save-buffers-kill-terminal))
                global-map)
 
-(se2/bind-keys '(
-                 ;; dired-narrow
-                 ("/" . dired-narrow-fuzzy)
-                 ;; dired-subtree
-                 ("]" . dired-subtree-toggle)
-                 ("[" . dired-subtree-cycle)
-                 ("C-<up>" . dired-subtree-beginning)
-                 ("C-<down>" . dired-subtree-end)
-                 ("C-<left>" . dired-subtree-up)
-                 ("C-<right>" . dired-subtree-down)
-                 ("M-<up>" . dired-subtree-previous-sibling)
-                 ("M-<down>" . dired-subtree-next-sibling)
-                 ("M-<right>" . dired-subtree-mark-subtree)
-                 ("M-<left>" . dired-subtree-unmark-subtree)
-                 ;; dired-ranger
-                 ("M-c" . dired-ranger-copy)
-                 ("M-m" . dired-ranger-move)
-                 ("M-v" . dired-ranger-paste))
-               dired-mode-map)
+(with-eval-after-load 'dired
+  (se2/bind-keys '(
+                   ;; dired-narrow
+                   ("/" . dired-narrow-fuzzy)
+                   ;; dired-subtree
+                   ("]" . dired-subtree-toggle)
+                   ("[" . dired-subtree-cycle)
+                   ("C-<up>" . dired-subtree-beginning)
+                   ("C-<down>" . dired-subtree-end)
+                   ("C-<left>" . dired-subtree-up)
+                   ("C-<right>" . dired-subtree-down)
+                   ("M-<up>" . dired-subtree-previous-sibling)
+                   ("M-<down>" . dired-subtree-next-sibling)
+                   ("M-<right>" . dired-subtree-mark-subtree)
+                   ("M-<left>" . dired-subtree-unmark-subtree)
+                   ;; dired-ranger
+                   ("M-c" . dired-ranger-copy)
+                   ("M-m" . dired-ranger-move)
+                   ("M-v" . dired-ranger-paste))
+                 dired-mode-map))
 
 (se2/bind-keys '(
                  ;; quickrun
