@@ -1,6 +1,6 @@
 (defvar se2/packages-basic
   '(;; Text-editing
-    (multiple-cursors github "magnars/multiple-cursors.el" t)
+    (multiple-cursors github "magnars/multiple-cursors.el" nil)
     (company github "company-mode/company-mode" t)
     (undo-tree github "akhayyat/emacs-undo-tree" nil ("undo-tree.el"))
     (rainbow-mode github "emacsmirror/rainbow-mode" nil)
